@@ -25,7 +25,7 @@
 //     e.preventDefault();
 
 //     try {
-//       const response = await axios.post('http://localhost:4000/api/form/submit', formData);
+//       const response = await axios.post('https://jobtech-backend.onrender.com/api/form/submit', formData);
 //       setSuccessMessage(response.data.message);
 //       setErrorMessage('');
 //       setFormData({
@@ -45,7 +45,7 @@
 
 //   const fetchData = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:4000/api/form/');
+//       const response = await axios.get('https://jobtech-backend.onrender.com/api/form/');
 //       setData(response.data);
 //     } catch (error) {
 //       console.error('Error fetching data:', error);
@@ -229,7 +229,7 @@ const ContactForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:4000/api/form/submit', formData);
+      const response = await axios.post('https://jobtech-backend.onrender.com/api/form/submit', formData);
       toast.success(response.data.message);
       setFormData({
         type: 'general',
