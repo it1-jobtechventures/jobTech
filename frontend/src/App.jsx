@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home';
+import Team from './components/Team';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar/>
       <Header />
       <Home/>
+      <Team/>
       <ContactForm />
       <Footer />
     </>
