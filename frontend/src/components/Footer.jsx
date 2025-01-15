@@ -32,7 +32,7 @@ const Footer = () => {
                     <p className="text-sm mt-1">Email: ping@jobtechventures.com</p>
                 </address>
             </div>
-            <section className="text-center py-4 bg-gray-50 text-white text-sm font-medium">
+            <section className="text-center py-4 bg-gray-50 text-black text-sm font-medium">
                 &copy; 2025 JOBTECH VENTURES PRIVATE LIMITED
             </section>
         </footer>
