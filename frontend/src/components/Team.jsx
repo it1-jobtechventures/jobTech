@@ -93,7 +93,7 @@ const Team = () => {
         <p className="text-gray-600 mb-10">
           There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-5 sm:m-0">
           {teamMembers.map((member, index) => (
             <div key={index} className="relative group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
               <img src={member.image} alt={member.name} className="w-full h-48 object-cover" />
