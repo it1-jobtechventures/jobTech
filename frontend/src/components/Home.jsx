@@ -26,7 +26,7 @@ const Home = () => {
   };
 
   return (
-    <div className="  p-6 flex flex-col items-center bg-purple-300">
+    <div className="  p-6 flex flex-col items-center ">
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
         <div className="flex justify-center items-center h-full">
           <img src={data[activeTab].image} alt={activeTab} className="rounded-lg shadow-lg w-full max-w-md md:max-w-lg"/>
