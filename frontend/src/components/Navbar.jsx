@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
 import {Link} from 'react-scroll'
+import jobTech_venture from '../assets/jobTech_ventures.png'
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
     <>
       <nav className="h-20 bg-blue-700 fixed w-full z-50 flex items-center justify-between px-4 md:px-10 text-white text-lg font-bold">
         <section className="flex items-center">
-          <img src="" alt="logo" className="h-10 w-10" />
+          <img src={jobTech_venture} alt="logo" className="h-9" />
         </section>
         <section className="md:hidden">
           <button onClick={toggleSidebar} className="focus:outline-none" aria-label="Toggle Menu">

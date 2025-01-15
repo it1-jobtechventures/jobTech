@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import jobTech_venture from '../assets/jobTech_ventures.png'
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-around items-center p-6 space-y-8 md:space-y-0">
                 <section className="text-center md:text-left">
                     <section className="mb-4">
-                        <img src="" alt="logo" className="h-12 w-12 mx-auto md:mx-0" />
+                        <img src={jobTech_venture} alt="logo" className="  h-9 mx-h-auto md:mx-0" />
                     </section>
                     <section>
                         <h4 className="font-bold text-lg text-blue-700 ">Follow Us:</h4>
