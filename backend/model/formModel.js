@@ -6,9 +6,9 @@ const formSchema = new mongoose.Schema({
     phone: { type: String, required: true },
     email: { type: String, required: true },
     message: { type: String },
-    companyName: { type: String }, // Optional for investor
+    companyName: { type: String },
     companyPublishDate: { type: Date }, 
-})
+},{timestamps:true})
 
 const formModel = mongoose.models.forn || mongoose.model("form", formSchema)
 export default formModel;
