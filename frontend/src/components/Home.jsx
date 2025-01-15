@@ -38,7 +38,7 @@ const Home = () => {
           </h2>
           <div className="flex space-x-4 mb-4">
             {['who-we-are', 'our-vision', 'our-history'].map((tab) => (
-              <button key={tab} className={`px-4 py-2 text-sm font-medium rounded-lg ${activeTab === tab ? 'bg-blue-600 text-white shadow-md':'bg-gray-200 text-gray-700 hover:bg-gray-300' }`} onClick={() => handleTabChange(tab)}>
+              <button key={tab} className={`px-4 py-2 text-sm font-medium rounded-lg ${activeTab === tab ? 'bg-blue-700 text-white shadow-md':'bg-gray-200 text-gray-700 hover:bg-gray-300' }`} onClick={() => handleTabChange(tab)}>
                 {tab.replace('-', ' ').toUpperCase()}
               </button>
             ))}

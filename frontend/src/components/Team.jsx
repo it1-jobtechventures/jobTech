@@ -101,16 +101,16 @@ const Team = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="flex space-x-3 bg-white p-2 rounded-full shadow-md">
                   {member.socials.map((icon, idx) => (
-                    <a key={idx} href="#" className="text-gray-500 text-xl hover:text-blue-600 transform hover:scale-110 transition duration-200">
+                    <a key={idx} href="#" className="text-gray-500 text-xl hover:text-blue-700 transform hover:scale-110 transition duration-200">
                       {icon}
                     </a>
                   ))}
                 </div>
               </div>
               {/* Content */}
-              <div className="p-6 text-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="p-6 text-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
                 <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-blue-600 group-hover:text-white">{member.title}</p>
+                <p className="text-blue-700 group-hover:text-white">{member.title}</p>
               </div>
             </div>
           ))}
