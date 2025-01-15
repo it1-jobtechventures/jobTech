@@ -7,7 +7,7 @@ const JobRinger = () => {
 
     const fetchAllData = async() => {
         const response = await axios.get()
-        console.log(response.data)
+        
         if (response.data.success) {
             setData(response.data)
         } else {
