@@ -21,7 +21,7 @@ const JobRinger = () => {
 
   return (
     <>
-        <div>
+        <div className='bg-orange-400 p-6'>
             <JobRingerCard/>
         </div>
     </>
