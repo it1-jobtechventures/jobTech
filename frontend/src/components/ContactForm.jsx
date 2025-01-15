@@ -13,6 +13,7 @@ const ContactForm = () => {
     companyName: '',
     companyPublishDate: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const validatePhone = (phone) => /^\d{10}$/.test(phone);
 
@@ -24,6 +25,10 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+      // Allow only numbers in the phone input
+      if (name === "phone" && !/^\d*$/.test(value)) {
+        return; // Ignore non-numeric input
+      }
     setFormData({ ...formData, [name]: value });
   };
 
@@ -44,22 +49,27 @@ const ContactForm = () => {
     }
 
     try {
-      const response = await axios.post(
-        'https://jobtech-backend.onrender.com/api/form/submit',
-        formData
-      );
-      toast.success(response.data.message);
-      setFormData({
-        type: 'general',
-        name: '',
-        phone: '',
-        email: '',
-        message: '',
-        companyName: '',
-        companyPublishDate: '',
-      });
+      setLoading(true)
+      const response = await axios.post('https://jobtech-backend.onrender.com/api/form/submit',formData);
+      console.log(response.data)
+      if (response.data) {
+        toast.success("Form submitted successfully.");
+        setFormData({
+          type: 'general',
+          name: '',
+          phone: '',
+          email: '',
+          message: '',
+          companyName: '',
+          companyPublishDate: '',
+        });
+      }else{
+        toast.error("Error submitting form.");
+      }
     } catch (error) {
       toast.error(error.response?.data?.error || 'An error occurred during submission.');
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -117,7 +127,7 @@ const ContactForm = () => {
             </div>
             <div>
               <label className="block font-medium text-gray-700">Phone</label>
-              <input type="text" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
+              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
             </div>
             <div>
               <label className="block font-medium text-gray-700">Email</label>
@@ -140,8 +150,14 @@ const ContactForm = () => {
                 </div>
               </>
             )}
-            <button type="submit" className="w-full py-3 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-300">
-              Submit
+            <button type="submit" disabled={loading} className="w-full py-3 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-300">
+              {loading ? (
+                <div className="flex justify-center items-center">
+                  <div className="w-6 h-6 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+                  </div>
+                ) : (
+                  'Submit'
+              )}
             </button>
           </form>
         </div>
