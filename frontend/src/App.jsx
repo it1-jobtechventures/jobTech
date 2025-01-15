@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home';
 import Team from './components/Team';
+import JobRinger from './components/JobRinger';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar/>
       <Header />
       <Home/>
+      <JobRinger/>
       <Team/>
       <ContactForm />
       <Footer />

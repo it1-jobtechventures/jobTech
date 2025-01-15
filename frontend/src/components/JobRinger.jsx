@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import JobRingerCard from './JobRingerCard'
 
 const JobRinger = () => {
     const [data , setData] = useState([])
@@ -19,7 +20,11 @@ const JobRinger = () => {
     },[])
 
   return (
-    <div>JobRinger</div>
+    <>
+        <div>
+            <JobRingerCard/>
+        </div>
+    </>
   )
 }
 
