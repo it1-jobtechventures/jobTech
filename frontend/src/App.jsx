@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home';
 import Team from './components/Team';
 import JobRinger from './components/JobRinger';
+import ScrollToTopButton from './components/ScrollTopToBottom';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Team/>
       <ContactForm />
       <Footer />
+      <ScrollToTopButton/>
     </>
   );
 }
