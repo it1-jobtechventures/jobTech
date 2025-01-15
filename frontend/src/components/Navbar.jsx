@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
+import {Link} from 'react-scroll'
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -47,18 +48,18 @@ const Navbar = () => {
         {/* Navigation Links (Hidden on Small Screens) */}
         <section className="hidden md:flex">
           <ul className="flex gap-5">
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+          <Link to="section1" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
               Home
-            </li>
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            </li></Link>
+            <Link to="section2" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
               Services
-            </li>
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            </li></Link>
+            <Link to="section3" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
               Team
-            </li>
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            </li></Link>
+            <Link to="section4" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
               Contact
-            </li>
+            </li></Link>
           </ul>
         </section>
       </nav>

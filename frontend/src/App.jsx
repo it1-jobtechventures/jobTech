@@ -15,7 +15,7 @@ function App() {
       <ToastContainer  />
       <Navbar/>
       <Header />
-      <Home/>
+      {/* <Home/> */}
       <JobRinger/>
       <Team/>
       <ContactForm />

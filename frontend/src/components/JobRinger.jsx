@@ -20,11 +20,11 @@ const JobRinger = () => {
     },[])
 
   return (
-    <>
-        <div className='bg-orange-400 p-6'>
+    <div id='section2'>
+        <div className=' p-6 pt-24'>
             <JobRingerCard/>
         </div>
-    </>
+    </div>
   )
 }
 
