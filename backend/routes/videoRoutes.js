@@ -5,6 +5,6 @@ const videoUrlRouter = express.Router()
 
 videoUrlRouter.post('/add' , addVideoUrl)
 videoUrlRouter.get('/all' , getVideoUrl)
-videoUrlRouter.delete('/remove' , removeVideoUrl)
+videoUrlRouter.post('/remove' , removeVideoUrl)
 
 export default videoUrlRouter;
