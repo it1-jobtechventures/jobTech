@@ -9,6 +9,7 @@ import Team from './components/Team';
 import ScrollToTopButton from './components/ScrollTopToBottom';
 import Video from './components/Video';
 import Overview from './components/Overview';
+import Performance from './components/Performance';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Video/>
       <Overview/>
       <Team/>
+      <Performance/>
       <ContactForm />
       <Footer />
       <ScrollToTopButton/>
