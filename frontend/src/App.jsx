@@ -5,11 +5,10 @@ import Header from './components/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar'
-import Home from './components/Home';
 import Team from './components/Team';
-import JobRinger from './components/JobRinger';
 import ScrollToTopButton from './components/ScrollTopToBottom';
 import Video from './components/Video';
+import Overview from './components/Overview';
 
 function App() {
   return (
@@ -17,9 +16,8 @@ function App() {
       <ToastContainer  />
       <Navbar/>
       <Header />
-      {/* <Home/> */}
       <Video/>
-      <JobRinger/>
+      <Overview/>
       <Team/>
       <ContactForm />
       <Footer />
