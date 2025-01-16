@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Team from './components/Team';
 import JobRinger from './components/JobRinger';
 import ScrollToTopButton from './components/ScrollTopToBottom';
+import Video from './components/Video';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Navbar/>
       <Header />
       {/* <Home/> */}
+      <Video/>
       <JobRinger/>
       <Team/>
       <ContactForm />
