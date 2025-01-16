@@ -10,5 +10,5 @@ const formSchema = new mongoose.Schema({
     companyPublishDate: { type: Date }, 
 },{timestamps:true})
 
-const formModel = mongoose.models.forn || mongoose.model("form", formSchema)
+const formModel = mongoose.models.form || mongoose.model("form", formSchema)
 export default formModel;
