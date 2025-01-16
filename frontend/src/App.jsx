@@ -10,6 +10,7 @@ import ScrollToTopButton from './components/ScrollTopToBottom';
 import Video from './components/Video';
 import Overview from './components/Overview';
 import Performance from './components/Performance';
+import JobRingerPage from './components/JobRingerPage';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <Video/>
       <Overview/>
       <Team/>
-      <Performance/>
+      <JobRingerPage/>
+      {/* <Performance/> */}
       <ContactForm />
       <Footer />
       <ScrollToTopButton/>
