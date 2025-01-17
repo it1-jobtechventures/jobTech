@@ -29,8 +29,10 @@ const Footer = () => {
                 <address className="text-center md:text-left">
                     <h4 className="font-bold text-lg mb-2 text-blue-700 ">Address:</h4>
                     <p className="text-sm">631, Building No. 3, Navjivan Society, <br />Lamington Road, Mumbai 400008.</p>
-                    <p className="text-sm mt-2">Phone No.: 022-23052037</p>
-                    <p className="text-sm mt-1">Email: ping@jobtechventures.com</p>
+                    <h4 className="font-bold text-lg mb-2 text-blue-700 ">Phone No.:</h4>
+                    <p className="text-sm mt-2"> 022-23052037</p>
+                    <h4 className="font-bold text-lg mb-2 text-blue-700 ">Email:</h4>
+                    <p className="text-sm mt-1"> ping@jobtechventures.com</p>
                 </address>
             </div>
             <section className="text-center py-4 bg-gray-50 text-black text-sm font-medium">

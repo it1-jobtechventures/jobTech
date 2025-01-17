@@ -95,7 +95,7 @@ const ContactForm = () => {
     <div className=" py-12 pt-24 " id='section4'>
       <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Information Cards */}
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           {info.map((info, index) => (
             <div key={index} className="shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-700 text-white text-xl">
@@ -107,6 +107,35 @@ const ContactForm = () => {
               </div>
             </div>
           ))}
+        </div> */}
+        <div className="space-y-6">
+            <div className="shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-700 text-white text-xl">
+                icon
+              </div>
+              <div>
+                <h2 className="text-lg font-bold text-blue-700">title</h2>
+                <p className="text-gray-600 whitespace-pre-line">content</p>
+              </div>
+            </div>
+            <div className="shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-700 text-white text-xl">
+                icon
+              </div>
+              <div>
+                <h2 className="text-lg font-bold text-blue-700">title</h2>
+                <p className="text-gray-600 whitespace-pre-line">content</p>
+              </div>
+            </div>
+            <div className="shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-700 text-white text-xl">
+                icon
+              </div>
+              <div>
+                <h2 className="text-lg font-bold text-blue-700">title</h2>
+                <p className="text-gray-600 whitespace-pre-line">content</p>
+              </div>
+            </div>
         </div>
         {/* Contact Form */}
         <div className="bg-white shadow-lg p-8 rounded-lg">
