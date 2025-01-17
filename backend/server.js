@@ -13,11 +13,13 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cors());
 
+
 //db connect
 connectDB();
 
 app.use('/api/form',formRouter)
 app.use('/api/videoUrl' , videoUrlRouter)
+
 
 // request the data for server
 app.get('/' , (req , res) => {
