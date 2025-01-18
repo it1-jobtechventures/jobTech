@@ -101,7 +101,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
-import LatestPdf from './LatestPdf';
+
 
 // Set the modal app element for accessibility
 Modal.setAppElement('#root');
