@@ -3,7 +3,7 @@ import videoModel from "../model/videoModel.js"
 const addVideoUrl = async (req ,res) => {
     try {
         const videoUrl = new videoModel({
-            url:req.body.url,
+            link:req.body.link,
         })
     
         await videoUrl.save()
