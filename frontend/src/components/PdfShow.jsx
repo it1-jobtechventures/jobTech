@@ -71,7 +71,7 @@ import Modal from 'react-modal';
 // Set the modal app element for accessibility
 Modal.setAppElement('#root');
 
-const PdfShow = () => {
+const PdfShow = ({url}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState(null);
   const [data, setData] = useState([]);
@@ -79,7 +79,7 @@ const PdfShow = () => {
   // Fetch PDF list and apply LIFO (reverse order)
   const displayPdf = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/pdf/get');
+      const res = await axios.get( `${url}/api/pdf/get`);
       // Reverse the array to apply LIFO order
       setData(res.data.data.reverse()); // Set reversed data to show the latest uploaded PDF first
     } catch (error) {
@@ -129,7 +129,7 @@ const PdfShow = () => {
         </div>
         <div className="modal-body">
           {selectedPdf && (
-            <iframe src={`http://localhost:4000/${selectedPdf.path}`}   width="100%" height="600px" title="PDF Viewer" className="border-0"/>
+            <iframe src={`${url}/${selectedPdf.path}`}   width="100%" height="600px" title="PDF Viewer" className="border-0"/>
           )}
         </div>
       </Modal>

@@ -9,25 +9,24 @@ import Team from './components/Team';
 import ScrollToTopButton from './components/ScrollTopToBottom';
 import Video from './components/Video';
 import Overview from './components/Overview';
-import Performance from './components/Performance';
 import JobRingerPage from './components/JobRingerPage';
-import PdfShow from './components/PdfShow';
 
 function App() {
+  const url ='https://jobtech-backend.onrender.com'
   return (
     <>
       <ToastContainer  />
-      <Navbar/>
-      <Header />
-      <Video/>
-      <Overview/>
-      <Team/>
-      <JobRingerPage/>
+      <Navbar url={url}/>
+      <Header  url={url}/>
+      <Video url={url}/>
+      <Overview url={url}/>
+      <Team url={url}/>
+      <JobRingerPage url={url}/>
       {/* <Performance/> */}
-      <ContactForm />
+      <ContactForm  url={url}/>
       {/* <PdfShow/> */}
-      <Footer />
-      <ScrollToTopButton/>
+      <Footer  url={url}/>
+      <ScrollToTopButton url={url}/>
     </>
   );
 }

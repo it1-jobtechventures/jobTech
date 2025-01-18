@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { IoCall } from 'react-icons/io5';
 import PdfShow from './PdfShow';
 
-const ContactForm = () => {
+const ContactForm = ({url}) => {
   const [formData, setFormData] = useState({
     type: 'general',
     name: '',
@@ -51,8 +51,7 @@ const ContactForm = () => {
 
     try {
       setLoading(true)
-      const response = await axios.post('https://jobtech-backend.onrender.com/api/form/submit',formData);
-      console.log(response.data)
+      const response = await axios.post(`${url}/api/form/submit`,formData);
       if (response.data) {
         toast.success("Form submitted successfully.");
         setFormData({

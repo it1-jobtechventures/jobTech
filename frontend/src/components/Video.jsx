@@ -42,7 +42,7 @@
     import axios from 'axios';
     import ReactPlayer from 'react-player';
     
-    const Video = () => {
+    const Video = ({url}) => {
         const [latestVideo, setLatestVideo] = useState(null);
     
         const convertToEmbedUrl = (url) => {
@@ -58,7 +58,7 @@
     
         const fetchLatestVideo = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/videoUrl/all');
+                const res = await axios.get(`${url}/api/videoUrl/all`);
                 if (res.data.success) {
                     // Sort videos by createdAt and pick the latest
                     const sortedVideos = res.data.data.sort(
