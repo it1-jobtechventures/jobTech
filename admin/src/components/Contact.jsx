@@ -3,13 +3,12 @@ import { useState } from 'react'
 import axios from  'axios'
 import { toast } from 'react-toastify'
 
-const Contact = () => {
+const Contact = ({url}) => {
     const [data , setData] = useState([])
 
     const fetchAllData= async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/form/')
-            console.log(response.data)
+            const response = await axios.get(`${url}/api/form/`)
             if (response.data) {
                 setData(response.data)
                 toast.success('data fetch success')
@@ -19,12 +18,12 @@ const Contact = () => {
         } catch (error) {
             toast.error(error.message)
         }
-
     }
 
     useEffect(() => {
         fetchAllData()
     },[])
+
   return (
     <div className="overflow-x-auto py-6">
         <table className="min-w-full table-auto border-collapse border border-gray-300">

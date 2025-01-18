@@ -5,13 +5,13 @@ import VideoUrl from './components/VideoUrl';
 import Pdf from './components/Pdf';
 
 function App() {
-  
+  const url = "https://jobtech-backend.onrender.com"
   return (
     <>
     <ToastContainer/>
-    <Contact/>
-    <VideoUrl/>
-    <Pdf/>
+    <Contact url={url}/>
+    <VideoUrl url={url}/>
+    <Pdf url={url}/>
     </>
   )
 }

@@ -98,15 +98,13 @@
 // export default Pdf;
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import Modal from 'react-modal';
-
 
 // Set the modal app element for accessibility
 Modal.setAppElement('#root');
 
-const Pdf = () => {
+const Pdf = ({url}) => {
   const [file, setFile] = useState(null);
   const [data, setData] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -123,27 +121,22 @@ const Pdf = () => {
       toast.error('Please select a file to upload.');
       return;
     }
-
-  const formData = new FormData();
-  formData.append('file', file);
-  try {
-    const response = await axios.post('http://localhost:4000/api/pdf/upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-    toast.success('File uploaded successfully!');
-    displayPdf();
-  } catch (error) {
-    toast.error('Error uploading file.');
-    console.error(error);
-  }
+    const formData = new FormData();
+    formData.append('file', file);
+    try {
+      const response = await axios.post(`${url}/api/pdf/upload`, formData, {headers: { 'Content-Type': 'multipart/form-data', },});
+      toast.success('File uploaded successfully!');
+      displayPdf();
+    } catch (error) {
+      toast.error('Error uploading file.');
+      console.error(error);
+    }
   };
 
   // Fetch PDF list and apply LIFO (reverse order)
   const displayPdf = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/pdf/get');
+      const res = await axios.get(`${url}/api/pdf/get`);
       // Reverse the array to apply LIFO order
       setData(res.data.data.reverse());
     } catch (error) {
@@ -154,7 +147,7 @@ const Pdf = () => {
   // Handle file deletion
   const handleFileDelete = async (pdfId) => {
     try {
-      await axios.delete(`http://localhost:4000/api/pdf/${pdfId}`);
+      await axios.delete(`${url}/api/pdf/${pdfId}`);
       toast.success('File deleted successfully!');
       displayPdf(); // Refresh the file list
     } catch (error) {
