@@ -11,6 +11,7 @@ import Video from './components/Video';
 import Overview from './components/Overview';
 import Performance from './components/Performance';
 import JobRingerPage from './components/JobRingerPage';
+import PdfShow from './components/PdfShow';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <JobRingerPage/>
       {/* <Performance/> */}
       <ContactForm />
+      {/* <PdfShow/> */}
       <Footer />
       <ScrollToTopButton/>
     </>
