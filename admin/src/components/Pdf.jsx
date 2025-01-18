@@ -207,7 +207,7 @@ const Pdf = ({url}) => {
         </div>
         <div className="modal-body">
           {selectedPdf && (
-            <iframe src={`http://localhost:4000/${selectedPdf.path}`} width="100%" height="600px" title="PDF Viewer" className="border-0"/>
+            <iframe src={`${url}/${selectedPdf.path}`} width="100%" height="600px" title="PDF Viewer" className="border-0"/>
           )}
         </div>
       </Modal>
