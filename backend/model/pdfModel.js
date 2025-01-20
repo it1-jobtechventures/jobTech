@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const pdfSchema = new mongoose.Schema({
-  name: { type: String },
-  path: { type: String },
-  size: { type: Number }, // File size in bytes
+  name: { type: String, required: true },
+  url: { type: String, required: true },
+  cloudinary_id: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
 });
 
