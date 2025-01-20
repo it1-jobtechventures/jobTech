@@ -1,101 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import {  toast } from 'react-toastify'; // Import toast
-
-
-// const Pdf = () => {
-//   const [file, setFile] = useState(null);
-//   const [data, setData] = useState([]);
-
-//   // Handle file selection
-//   const handleFileChange = (event) => {
-//     setFile(event.target.files[0]);
-//   };
-
-//   // Handle file upload
-//   const handleFileUpload = async () => {
-//     if (!file) {
-//       toast.error('Please select a file to upload.');
-//       return;
-//     }
-
-//     const formData = new FormData();
-//     formData.append('file', file);
-//     try {
-//       const response = await axios.post('http://localhost:4000/api/pdf/upload', formData, {
-//         headers: {
-//           'Content-Type': 'multipart/form-data',
-//         },
-//       });
-//       toast.success('File uploaded successfully!');
-//       setFile('')
-//       console.log(response.data);
-//       displayPdf(); // Refresh the file list
-//     } catch (error) {
-//       toast.error('Error uploading file.');
-//       console.error(error);
-//     }
-//   };
-
-//   const displayPdf = async () => {
-//     try {
-//       const res = await axios.get('http://localhost:4000/api/pdf/get');
-//       console.log(res.data.data);
-//       setData(res.data.data);
-//     } catch (error) {
-//       console.error('Error fetching PDF list:', error);
-//     }
-//   };
-
-//   // Handle file deletion
-//   const handleFileDelete = async (pdfId) => {
-//     try {
-//       await axios.delete(`http://localhost:4000/api/pdf/${pdfId}`);
-//       toast.success('File deleted successfully!');
-//       displayPdf(); // Refresh the file list
-//     } catch (error) {
-//       toast.error('Error deleting file.');
-//       console.error(error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     displayPdf();
-//   }, []);
-
-//   return (
-//     <div className='bg-pink-500 shadow-2xl'>
-//       <div className="file-upload">
-//         <h1>File Upload</h1>
-//         <input type="file" onChange={handleFileChange} />
-//         <button onClick={handleFileUpload}>Upload</button>
-//       </div>
-
-//       <div>
-//         <h2>List of PDFs</h2>
-//         <div className='bg-orange-300'>
-//           {data.map((file) => (
-//             <div className='p-5' key={file._id}>
-//               <p>{file.name}</p>
-//               <a
-//                 href={`http://localhost:4000/${file.path}`}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-blue-500 hover:text-blue-700"
-//               >
-//                 View
-//               </a>
-//               <button onClick={() => handleFileDelete(file._id)}>Remove</button>
-//               <hr />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Pdf;
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -136,7 +38,7 @@ const Pdf = ({url}) => {
   // Fetch PDF list and apply LIFO (reverse order)
   const displayPdf = async () => {
     try {
-      const res = await axios.get(`${url}/api/pdf/get`);
+      const res = await axios.get(`${url}/api/pdf/files`);
       // Reverse the array to apply LIFO order
       setData(res.data.data.reverse());
     } catch (error) {
@@ -147,7 +49,7 @@ const Pdf = ({url}) => {
   // Handle file deletion
   const handleFileDelete = async (pdfId) => {
     try {
-      await axios.delete(`${url}/api/pdf/${pdfId}`);
+      await axios.delete(`${url}/api/pdf/files/${pdfId}`);
       toast.success('File deleted successfully!');
       displayPdf(); // Refresh the file list
     } catch (error) {
@@ -207,7 +109,7 @@ const Pdf = ({url}) => {
         </div>
         <div className="modal-body">
           {selectedPdf && (
-            <iframe src={`${url}/${selectedPdf.path}`} width="100%" height="600px" title="PDF Viewer" className="border-0"/>
+            <iframe src={selectedPdf.url} width="100%" height="600px" title="PDF Viewer" className="border-0"/>
           )}
         </div>
       </Modal>
