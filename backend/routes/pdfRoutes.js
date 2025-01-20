@@ -8,8 +8,8 @@ const pdfRouter = express.Router();
 pdfRouter.post('/upload', upload.single('file'), uploaPdf);
 
 // Route to retrieve a file
-pdfRouter.get('/get', getPdf);
+pdfRouter.get('/files', getPdf);
 
-pdfRouter.delete('/:id' , deletePdf)
+pdfRouter.delete('/files/:id' , deletePdf)
 
 export default pdfRouter;

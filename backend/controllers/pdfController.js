@@ -1,66 +1,65 @@
+import cloudinary from "../config/cloudinary.js";
 import pdfModel from "../model/pdfModel.js";
-import fs from 'fs'
+import fs from "fs";
 
 // Upload file
 const uploaPdf = async (req, res) => {
   try {
-    const { originalname, path, size } = req.file;
-    const file = new pdfModel({
-      name: originalname,
-      path,
-      size,
+    const filePath = req.file.path;
+
+    // Upload to Cloudinary
+    const result = await cloudinary.uploader.upload(filePath, { resource_type: "raw",  access_mode: "public",});
+
+    // Save file details to the database with Cloudinary public_id
+    const newFile = new pdfModel({
+      name: req.file.originalname,
+      url: result.secure_url,
+      cloudinary_id: result.public_id, 
     });
 
-    await file.save();
-    res.status(201).send({ message: 'File uploaded successfully!', file });
+    await newFile.save();
+
+    // Delete the file from local uploads folder
+    fs.unlinkSync(filePath);
+
+    res.status(201).send({ message: "File uploaded successfully!", file: newFile });
   } catch (error) {
-    res.status(500).send({ message: 'Error uploading file', error: error.message });
+    res.status(500).send({ message: "Error uploading file", error: error.message });
   }
 };
 
 // Fetch file details
 const getPdf = async (req, res) => {
   try {
-    const file = await pdfModel.find({});
-    if (!file) return res.status(404).send({ message: 'File not found' });
-
-    res.json({success:true , data:file})
+    const files = await pdfModel.find({});
+    res.status(200).json({ success: true, data: files });
   } catch (error) {
-    res.status(500).send({ message: 'Error retrieving file', error: error.message });
+    res.status(500).send({ message: "Error retrieving files", error: error.message });
   }
 };
 
-// // Remove file
-
-
+// Remove file
 const deletePdf = async (req, res) => {
   try {
     const file = await pdfModel.findById(req.params.id);
     if (!file) {
-      return res.status(404).send({ message: 'File not found in database' });
+      return res.status(404).send({ message: "File not found in database" });
     }
 
-    // Check if file exists in the filesystem
-    if (fs.existsSync(file.path)) {
-      // Delete file from the filesystem
-      fs.unlink(file.path, async (err) => {
-        if (err) {
-          return res.status(500).send({ message: 'Error deleting file from filesystem', error: err.message });
-        }
-
-        // Remove file from the database
-        await pdfModel.findByIdAndDelete(file._id); // Updated line
-        res.status(200).send({ message: 'File deleted successfully' });
-      });
-    } else {
-      // If file does not exist, still remove the database entry
-      await pdfModel.findByIdAndDelete(file._id); // Updated line
-      res.status(404).send({ message: 'File not found on server, removed from database' });
+    if (!file.cloudinary_id) {
+      return res.status(400).json({ message: "Cloudinary ID missing, cannot delete file" });
     }
+
+    // Delete the file from Cloudinary
+    await cloudinary.uploader.destroy(file.cloudinary_id);
+
+    // Remove the file record from MongoDB
+    await pdfModel.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({ message: "File deleted successfully" });
   } catch (error) {
-    res.status(500).send({ message: 'Error deleting file', error: error.message });
+    res.status(500).send({ message: "Error deleting file", error: error.message });
   }
 };
 
-
-export {getPdf ,uploaPdf ,deletePdf}
+export { getPdf, uploaPdf, deletePdf };
