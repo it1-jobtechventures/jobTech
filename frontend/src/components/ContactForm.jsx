@@ -94,7 +94,7 @@ const ContactForm = ({url}) => {
   return (
     <div className=" py-12 pt-24 " id='section4'>
       <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"> 
-        <PdfShow/>
+        <PdfShow url={url}/>
         {/* Contact Form */}
         <div className="bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-2xl font-bold text-blue-700 mb-6">Contact Form</h2>
