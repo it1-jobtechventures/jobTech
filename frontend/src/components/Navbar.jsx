@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="h-20 bg-blue-700 fixed w-full z-50 flex items-center justify-between px-4 md:px-10 text-white text-lg font-bold">
+      <nav className="h-20 bg-white text-black fixed w-full z-50 flex items-center justify-between px-4 md:px-10  text-lg font-bold">
         <section className="flex items-center">
           <img src={jobTech_venture} alt="logo" className="h-9" />
         </section>
@@ -49,16 +49,16 @@ const Navbar = () => {
         {/* Navigation Links (Hidden on Small Screens) */}
         <section className="hidden md:flex">
           <ul className="flex gap-5">
-          <Link to="section1" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+          <Link to="section1" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
               Home
             </li></Link>
-            <Link to="section2" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <Link to="section2" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
               Services
             </li></Link>
-            <Link to="section3" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <Link to="section3" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
               Team
             </li></Link>
-            <Link to="section4" smooth={true} duration={500}><li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <Link to="section4" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
               Contact
             </li></Link>
           </ul>

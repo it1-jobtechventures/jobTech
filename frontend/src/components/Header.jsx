@@ -27,7 +27,7 @@ const Header = () => {
     setActiveTab(tab);
   };
   return (
-    <div className="pt-20  p-6 flex flex-col items-center ">
+    <div className="pt-20  p-6 flex flex-col items-center h-screen ">
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
         <div className="flex justify-center items-center h-full">
           <img src={data[activeTab].image} alt={activeTab} className="rounded-lg shadow-lg w-full max-w-md md:max-w-lg"/>
