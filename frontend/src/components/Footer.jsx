@@ -16,22 +16,22 @@ const Footer = () => {
                         <img src={jobTech_venture} alt="logo" className="  h-9 mx-h-auto md:mx-0" />
                     </section>
                     <section>
-                        <h4 className="font-bold text-lg text-blue-700 ">Follow Us:</h4>
+                        <h4 className="font-bold text-lg text-[#3678f4] ">Follow Us:</h4>
                         <section className="flex justify-center md:justify-start gap-4 text-3xl pt-3">
-                            <FaFacebook className="hover:text-blue-700 cursor-pointer transition duration-300" />
-                            <FaLinkedin className="hover:text-blue-700 cursor-pointer transition duration-300" />
-                            <FaXTwitter className="hover:text-blue-700 cursor-pointer transition duration-300" />
-                            <FaInstagramSquare className="hover:text-blue-700  cursor-pointer transition duration-300" />
-                            <FaYoutube className="hover:text-blue-700  cursor-pointer transition duration-300" />
+                            <FaFacebook className="hover:text-[#3678f4] cursor-pointer transition duration-300" />
+                            <FaLinkedin className="hover:text-[#3678f4] cursor-pointer transition duration-300" />
+                            <FaXTwitter className="hover:text-[#3678f4] cursor-pointer transition duration-300" />
+                            <FaInstagramSquare className="hover:text-[#3678f4]  cursor-pointer transition duration-300" />
+                            <FaYoutube className="hover:text-[#3678f4]  cursor-pointer transition duration-300" />
                         </section>
                     </section>
                 </section>
                 <address className="text-center md:text-left">
-                    <h4 className="font-bold text-lg mb-2 text-blue-700 ">Address:</h4>
+                    <h4 className="font-bold text-lg mb-2 text-[#3678f4] ">Address:</h4>
                     <p className="text-sm">631, Building No. 3, Navjivan Society, <br />Lamington Road, Mumbai 400008.</p>
-                    <h4 className="font-bold text-lg mb-2 text-blue-700 ">Phone No.:</h4>
+                    <h4 className="font-bold text-lg mb-2 text-[#3678f4] ">Phone No.:</h4>
                     <p className="text-sm mt-2"> 022-23052037</p>
-                    <h4 className="font-bold text-lg mb-2 text-blue-700 ">Email:</h4>
+                    <h4 className="font-bold text-lg mb-2 text-[#3678f4] ">Email:</h4>
                     <p className="text-sm mt-1"> ping@jobtechventures.com</p>
                 </address>
             </div>

@@ -28,7 +28,7 @@ const JobRingerCard = () => {
                         <p>Full Time - Permanent</p>
                     </section>
                 </section>
-                <button className='bg-blue-700 hover:bg-blue-800 text-white p-1 font-bold w-28 rounded-full'>APPLY</button>
+                <button className='bg-[#3678f4] hover:bg-[#3678f4] text-white p-1 font-bold w-28 rounded-full'>APPLY</button>
             </div>
         </main>
     </>

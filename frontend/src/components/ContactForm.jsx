@@ -97,32 +97,32 @@ const ContactForm = ({url}) => {
         <PdfShow url={url}/>
         {/* Contact Form */}
         <div className="bg-white shadow-lg p-8 rounded-lg">
-          <h2 className="text-2xl font-bold text-blue-700 mb-6">Contact Form</h2>
+          <h2 className="text-2xl font-bold -[#3678f4] mb-6">Contact Form</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* User Type Selector */}
             <div className="flex space-x-4">
-              <button type="button"className={`px-4 py-2 rounded ${ formData.type === 'general'?' bg-blue-700 text-white':'bg-gray-200 text-gray-700'}`}onClick={() => setFormData({ ...formData, type: 'general' })}>
+              <button type="button"className={`px-4 py-2 rounded ${ formData.type === 'general'?' bg-[#3678f4] text-white':'bg-gray-200 text-gray-700'}`}onClick={() => setFormData({ ...formData, type: 'general' })}>
                 General
               </button>
-              <button type="button" className={`px-4 py-2 rounded ${formData.type === 'investor'?'bg-blue-700 text-white':'bg-gray-200 text-gray-700'}`} onClick={() => setFormData({ ...formData, type: 'investor' })}>
+              <button type="button" className={`px-4 py-2 rounded ${formData.type === 'investor'?'bg-[#3678f4] text-white':'bg-gray-200 text-gray-700'}`} onClick={() => setFormData({ ...formData, type: 'investor' })}>
                 Investor
               </button>
             </div>
             <div>
               <label className="block font-medium text-gray-700">Name</label>
-              <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
+              <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
             </div>
             <div>
               <label className="block font-medium text-gray-700">Phone</label>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
+              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
             </div>
             <div>
               <label className="block font-medium text-gray-700">Email</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
+              <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
             </div>
             <div>
               <label className="block font-medium text-gray-700">Message</label>
-              <textarea name="message" value={formData.message} onChange={handleChange} rows="4" className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"></textarea>
+              <textarea name="message" value={formData.message} onChange={handleChange} rows="4" className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"></textarea>
             </div>
             {/* Conditional Fields for Investors */}
             {formData.type === 'investor' && (
@@ -137,7 +137,7 @@ const ContactForm = ({url}) => {
                 </div>
               </>
             )}
-            <button type="submit" disabled={loading} className="w-full py-3 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-300">
+            <button type="submit" disabled={loading} className="w-full py-3 bg-[#3678f4] text-white rounded hover:bg-blue-800 transition duration-300">
               {loading ? (
                 <div className="flex justify-center items-center">
                   <div className="w-6 h-6 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>

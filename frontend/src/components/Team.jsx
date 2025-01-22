@@ -108,7 +108,7 @@ const Team = () => {
                 </div>
               </div>
               {/* Content */}
-              <div className="p-6 text-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+              <div className="p-6 text-center group-hover:bg-[#3678f4] group-hover:text-white transition-colors duration-300">
                 <h3 className="text-xl font-semibold">{member.name}</h3>
                 <p className="text-blue-700 group-hover:text-white">{member.title}</p>
               </div>

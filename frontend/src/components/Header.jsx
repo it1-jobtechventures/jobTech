@@ -40,7 +40,7 @@ const Header = () => {
           </h2>
           <div className="flex flex-wrap justify-center lg:justify-start space-x-2 space-y-2 lg:space-y-0 mb-4">
             {['who-we-are', 'vision', 'Inspiration'].map((tab) => (
-              <button key={tab} className={`px-3 py-2 text-sm font-medium rounded-lg ${ activeTab === tab ? 'bg-blue-700 text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`} onClick={() => handleTabChange(tab)}>
+              <button key={tab} className={`px-3 py-2 text-sm font-medium rounded-lg ${ activeTab === tab ? 'bg-[#3678f4] text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`} onClick={() => handleTabChange(tab)}>
                 {tab.replace('-', ' ').toUpperCase()}
               </button>
             ))}

@@ -49,16 +49,16 @@ const Navbar = () => {
         {/* Navigation Links (Hidden on Small Screens) */}
         <section className="hidden md:flex">
           <ul className="flex gap-5">
-          <Link to="section1" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
+          <Link to="section1" smooth={true} duration={500}><li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Home
             </li></Link>
-            <Link to="section2" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
+            <Link to="section2" smooth={true} duration={500}><li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Services
             </li></Link>
-            <Link to="section3" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
+            <Link to="section3" smooth={true} duration={500}><li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Team
             </li></Link>
-            <Link to="section4" smooth={true} duration={500}><li className="hover:text-gray-500 transition duration-300 cursor-pointer">
+            <Link to="section4" smooth={true} duration={500}><li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Contact
             </li></Link>
           </ul>
@@ -67,7 +67,7 @@ const Navbar = () => {
 
       {/* Sidebar for Mobile Navigation */}
       <div
-        className={`fixed top-0 left-0 h-full w-full bg-blue-700 text-white transform ${
+        className={`fixed top-0 left-0 h-full w-full bg-[#3678f4] text-white transform ${
           isSidebarOpen ? "translate-y-0" : "-translate-y-full"
         } transition-transform duration-300 ease-in-out z-40`}
       >
@@ -93,16 +93,16 @@ const Navbar = () => {
             </svg>
           </button>
           <ul className="text-center text-lg space-y-4">
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Home
             </li>
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Services
             </li>
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Team
             </li>
-            <li className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            <li className="hover:text-[#3678f4] transition duration-300 cursor-pointer">
               Contact
             </li>
           </ul>
@@ -135,7 +135,7 @@ export default Navbar;
 //   return (
 //     <>
 //       {/* Navbar */}
-//       <nav className="h-20 bg-blue-700 fixed w-full z-50 flex items-center justify-between px-4 md:px-10 text-white text-lg font-bold">
+//       <nav className="h-20 bg-[#3678f4] fixed w-full z-50 flex items-center justify-between px-4 md:px-10 text-white text-lg font-bold">
 //         {/* Logo Section */}
 //         <section className="flex items-center">
 //           <img src="" alt="logo" className="h-10 w-10" />
@@ -177,7 +177,7 @@ export default Navbar;
 
 //       {/* Sidebar for Mobile Navigation */}
 //       <div
-//         className={`fixed top-0 left-0 h-full w-full bg-blue-700 text-white transform ${
+//         className={`fixed top-0 left-0 h-full w-full bg-[#3678f4] text-white transform ${
 //           isSidebarOpen ? "translate-y-0" : "-translate-y-full"
 //         } transition-transform duration-300 ease-in-out z-40`}
 //       >
