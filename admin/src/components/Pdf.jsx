@@ -58,7 +58,8 @@ const Pdf = ({url}) => {
     try {
       await axios.delete(`${url}/api/pdf/files/${pdfId}`);
       toast.success('File deleted successfully!');
-      displayPdf(); // Refresh the file list
+      displayPdf(); 
+      setFile('')
     } catch (error) {
       toast.error('Error deleting file.');
       console.error(error);
