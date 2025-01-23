@@ -43,7 +43,7 @@ const Header = () => {
               </button>
             ))}
           </div>
-          <p className="text-gray-700 leading-relaxed">{data[activeTab].text}</p>
+          <p className="text-black leading-relaxed text-justify font-medium">{data[activeTab].text}</p>
         </div>
       </div>
     </div>
