@@ -30,6 +30,7 @@ const Pdf = ({url}) => {
       if (response.data) {
         toast.success('File uploaded successfully!');
         displayPdf();
+        setFile(null);
       }
     } catch (error) {
       if (error.response?.status === 400 && error.response.data?.message.includes('File size')) {
@@ -58,8 +59,7 @@ const Pdf = ({url}) => {
     try {
       await axios.delete(`${url}/api/pdf/files/${pdfId}`);
       toast.success('File deleted successfully!');
-      displayPdf(); 
-      setFile('')
+      displayPdf(); // Refresh the file list
     } catch (error) {
       toast.error('Error deleting file.');
       console.error(error);
