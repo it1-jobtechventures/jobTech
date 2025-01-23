@@ -27,11 +27,18 @@ const Pdf = ({url}) => {
     formData.append('file', file);
     try {
       const response = await axios.post(`${url}/api/pdf/upload`, formData, {headers: { 'Content-Type': 'multipart/form-data', },});
-      toast.success('File uploaded successfully!');
-      displayPdf();
+      if (response.data) {
+        toast.success('File uploaded successfully!');
+        displayPdf();
+      }
     } catch (error) {
-      toast.error('Error uploading file.');
-      console.error(error);
+      if (error.response?.status === 400 && error.response.data?.message.includes('File size')) {
+        toast.error('File size exceeds the 10 MB limit (from server).');
+      } else {
+        toast.error('Error uploading file.');
+      }
+        toast.error('Error uploading file.');
+        console.error(error);
     }
   };
 
@@ -75,7 +82,7 @@ const Pdf = ({url}) => {
   }, []);
 
   return (
-    <div className='bg-pink-500 shadow-2xl p-8'>
+    <div className=' shadow-2xl p-8'>
       <div className="file-upload mb-4">
         <h1 className="text-2xl font-bold">File Upload</h1>
         <input type="file" onChange={handleFileChange} className="mt-2 p-2 border border-gray-300 rounded-md"/>
@@ -85,7 +92,7 @@ const Pdf = ({url}) => {
       </div>
       <div>
         <h2 className="text-xl font-semibold mb-4">List of PDFs</h2>
-        <div className='bg-orange-300 p-4 rounded-md'>
+        <div className=' p-4 rounded-md'>
           {data.map((file) => (
             <div className='p-5' key={file._id}>
               <p>{file.name}</p>
