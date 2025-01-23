@@ -26,28 +26,24 @@ const Header = () => {
   };
 
   return (
-    <div className="pt-24 px-4 md:px-6 flex flex-col items-center min-h-screen">
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
-        <div className="flex justify-center items-center">
-          <img src={data[activeTab].image} alt={activeTab} className="rounded-lg shadow-lg w-full h-[50vh] md:h-[65vh] max-w-xs md:max-w-md lg:max-w-lg"/>
+    <div className="pt-24 px-5 lg:px-20">
+      <h2 className="text-3xl lg:text-4xl font-bold text-center text-[#3678f4]">Don’t Look Back... You’re Not Going That Way</h2>
+      <div className="flex flex-col lg:flex-row w-full mt-10 gap-8 lg:gap-16">
+        <div className="lg:w-1/2">
+          <img src={data[activeTab].image} alt={activeTab} className="w-full rounded-lg shadow-lg"/>
         </div>
-        <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
-          <h1 className="text-gray-500 font-semibold text-base md:text-lg">
+        <div className="lg:w-1/2 space-y-5">
+          <h1 className="text-lg font-semibold text-gray-600 tracking-wide uppercase">
             -- Our Story
           </h1>
-          <h2 className="text-2xl md:text-3xl font-bold leading-snug">
-            Don’t Look Back... <br /> You’re Not Going That Way
-          </h2>
-          <div className="flex flex-wrap justify-center lg:justify-start space-x-2 space-y-2 lg:space-y-0 mb-4">
+          <div className="flex md:flex-row flex-col gap-3">
             {['who-we-are', 'vision', 'Inspiration'].map((tab) => (
-              <button key={tab} className={`px-3 py-2 text-sm font-medium rounded-lg ${ activeTab === tab ? 'bg-[#3678f4] text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`} onClick={() => handleTabChange(tab)}>
+              <button key={tab} className={`px-4 py-2 rounded-lg text-sm font-medium ${ activeTab === tab ? 'bg-[#3678f4] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`} onClick={() => handleTabChange(tab)}>
                 {tab.replace('-', ' ').toUpperCase()}
               </button>
             ))}
           </div>
-          <p className="text-sm md:text-lg text-gray-700 leading-relaxed px-2">
-            {data[activeTab].text}
-          </p>
+          <p className="text-gray-700 leading-relaxed">{data[activeTab].text}</p>
         </div>
       </div>
     </div>
