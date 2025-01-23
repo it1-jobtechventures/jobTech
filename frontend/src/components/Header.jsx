@@ -33,7 +33,7 @@ const Header = () => {
           <img src={data[activeTab].image} alt={activeTab} className="w-full rounded-lg shadow-lg"/>
         </div>
         <div className="lg:w-1/2 space-y-5">
-          <h1 className="text-lg font-semibold text-gray-600 tracking-wide uppercase">
+          <h1 className="text-lg font-semibold text-gray-600 tracking-wide uppercase text-center md:text-start">
             -- Our Story
           </h1>
           <div className="flex md:flex-row flex-col gap-3">
