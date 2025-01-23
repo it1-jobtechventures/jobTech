@@ -81,7 +81,7 @@
         }, []);
     
         return (
-            <div className="flex justify-center items-center p-4 h-[36rem] ">
+            <div className="flex justify-center items-center p-4 ">
                 {latestVideo ? (
                     <ReactPlayer
                         url={latestVideo.url}
