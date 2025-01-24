@@ -35,7 +35,6 @@ const VideoUrl = ({url}) => {
     const fetchAllData = async() => {
         try {
             const res = await axios.get(`${url}/api/videoUrl/all`)
-            console.log(res.data)
             if (res.data.success) {
                 setData(res.data.data)
                 toast.success("data fetch ")
