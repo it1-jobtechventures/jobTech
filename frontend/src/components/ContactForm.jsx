@@ -131,10 +131,10 @@ const ContactForm = ({url}) => {
                   <label className="block font-medium text-gray-700">Company Name</label>
                   <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
                 </div>
-                <div>
+                {/* <div>
                   <label className="block font-medium text-gray-700">Company Publish Date</label>
                   <input type="date" name="companyPublishDate" value={formData.companyPublishDate} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700" />
-                </div>
+                </div> */}
               </>
             )}
             <button type="submit" disabled={loading} className="w-full py-3 bg-[#3678f4] text-white rounded hover:bg-blue-800 transition duration-300">
