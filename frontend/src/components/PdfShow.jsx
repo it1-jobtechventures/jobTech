@@ -40,7 +40,7 @@ const PdfShow = ({url}) => {
   };
 
   return (
-    <div>
+    <>
       {/* Button to open the modal */}
       <div className="space-y-6">
         <div className="cursor-pointer shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300" onClick={openModal}>
@@ -67,7 +67,7 @@ const PdfShow = ({url}) => {
           )}
         </div>
       </Modal>
-    </div>
+    </>
   );
 };
 

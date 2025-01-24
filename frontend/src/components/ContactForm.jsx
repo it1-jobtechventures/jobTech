@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { IoCall } from 'react-icons/io5';
 import PdfShow from './PdfShow';
+import ExcelViwer from './ExcelViwer';
 
 const ContactForm = ({url}) => {
   const [formData, setFormData] = useState({
@@ -95,6 +96,7 @@ const ContactForm = ({url}) => {
     <div className=" py-12 pt-24 " id='section4'>
       <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"> 
         <PdfShow url={url}/>
+        <ExcelViwer url={url}/>
         {/* Contact Form */}
         <div className="bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-2xl font-bold -[#3678f4] mb-6">Contact Form</h2>
