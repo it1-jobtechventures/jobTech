@@ -6,8 +6,8 @@ const JobRingerPage = () => {
   return (
     <div>
         <h1 className='text-center text-4xl font-bold '>OUR PRODUCTS</h1>
-        <main className='p-5 shadow-2xl mt-4 m-5'>
-            <h2 className='text-center text-2xl font-bold '>JOBRINGER</h2>
+        <main className='p-5 shadow-sm mt-4 m-5 shadow-[#3678f4]'>
+            <h2 className='text-center text-2xl font-bold text-[#3678f4]'>JOBRINGER</h2>
             <div className='pt-5 flex justify-between items-center md:p-5 flex-col lg:flex-row'>
                 <section className='lg:w-[50%] flex justify-center items-center'>
                     <img src={jobRinger} alt='jobringer logo' />
