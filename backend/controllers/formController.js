@@ -2,7 +2,7 @@ import formModel from '../model/formModel.js';
 
 // Submit Form
 const submitForm = async (req, res) => {
-  const { type, name, phone, email, message, companyName, companyPublishDate } = req.body;
+  const { type, name, phone, email, message, companyName } = req.body;
 
   try {
     const newForm = new formModel({
@@ -12,7 +12,6 @@ const submitForm = async (req, res) => {
       email,
       message,
       companyName: type === 'investor' ? companyName : undefined,
-      companyPublishDate: type === 'investor' ? companyPublishDate : undefined,
     });
 
     await newForm.save();

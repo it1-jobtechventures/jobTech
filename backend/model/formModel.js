@@ -7,7 +7,7 @@ const formSchema = new mongoose.Schema({
     email: { type: String, required: true },
     message: { type: String },
     companyName: { type: String },
-    companyPublishDate: { type: Date }, 
+    // companyPublishDate: { type: Date }, 
 },{timestamps:true})
 
 const formModel = mongoose.models.form || mongoose.model("form", formSchema)
