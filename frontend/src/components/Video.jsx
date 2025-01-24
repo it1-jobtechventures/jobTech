@@ -88,7 +88,7 @@
                         controls
                         width="100%"
                         height="100%"
-                        light={true}
+                        // light={true}
                         // light='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYTyHKuo1Dyv-ScGPNPBq9b2Y6sJ69IdVHw&s'
                         config={{
                             file: {
