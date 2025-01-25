@@ -94,9 +94,12 @@ const ContactForm = ({url}) => {
 
   return (
     <div className=" py-12 pt-24 " id='section4'>
-      <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"> 
+      <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className='flex flex-col gap-5'>
         <PdfShow url={url}/>
         <ExcelViwer url={url}/>
+        </div>
+
         {/* Contact Form */}
         <div className="bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-2xl font-bold -[#3678f4] mb-6">Contact Form</h2>
