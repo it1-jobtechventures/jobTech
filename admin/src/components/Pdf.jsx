@@ -109,7 +109,7 @@ const Pdf = ({url}) => {
         </div>
       </div>
       {/* Modal for PDF viewing */}
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="View PDF" className="fixed inset-0 bg-white p-4 w-11/12 md:w-2/3 mx-auto my-auto rounded-lg shadow-lg" overlayClassName="fixed inset-0 bg-black bg-opacity-50">
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="View PDF" className=" z-50 fixed inset-0 bg-white p-4 w-11/12 md:w-2/3 mx-auto my-auto rounded-lg shadow-lg" overlayClassName="fixed inset-0 bg-black bg-opacity-50">
         <div className="flex justify-end">
           <button onClick={closeModal} className="text-xl font-bold text-gray-700 hover:text-black">
             X
