@@ -8,7 +8,7 @@ const Overview = () => {
 
   return (
     <>
-        <main className='bg-[#3678f4] text-white flex md:p-5 p-3 justify-around items-center flex-col md:flex-row'>
+        <main id='section3' className='bg-[#3678f4] text-white flex md:p-5 p-3 justify-around items-center flex-col md:flex-row'>
             <section className='md:w-[50%] space-y-5'>
                 <h1 className='md:text-3xl text-2xl font-bold text-center md:text-left lg:text-5xl'>COMPANY OVERVIEW</h1>
                 <section>

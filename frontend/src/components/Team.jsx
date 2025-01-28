@@ -32,7 +32,7 @@ const Team = () => {
   ];
 
   return (
-    <section className=" py-10 text-black pt-24" id='section3'>
+    <section className=" py-10 text-black pt-24" id='section4'>
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Our Creative Team</h2>
         <p className="text-gray-600 mb-10">
