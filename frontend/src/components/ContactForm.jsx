@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { IoCall } from 'react-icons/io5';
 import PdfShow from './PdfShow';
 import ExcelViwer from './ExcelViwer';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = ({url}) => {
   const [formData, setFormData] = useState({
@@ -19,11 +20,11 @@ const ContactForm = ({url}) => {
 
   const validatePhone = (phone) => /^\d{10}$/.test(phone);
 
-  const validateCompanyPublishDate = (date) => {
-    const today = new Date();
-    const selectedDate = new Date(date);
-    return selectedDate <= today;
-  };
+  // const validateCompanyPublishDate = (date) => {
+  //   const today = new Date();
+  //   const selectedDate = new Date(date);
+  //   return selectedDate <= today;
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +34,68 @@ const ContactForm = ({url}) => {
       }
     setFormData({ ...formData, [name]: value });
   };
+  const sentEmail = (data) => {
+    const templateParams = {
+      from_name: data.name,
+      email: data.email,
+      type:data.type,
+      phoneNo:data.phone,
+      message:data.message,
+      companyName:data.companyName
+    };
+    emailjs
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(() => {
+      toast.success('Email sent successfully!');
+    })
+    .catch((error) => {
+      toast.error('Failed to send email: ' + error.text);
+    });
+};
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
+  //   if (!validatePhone(formData.phone)) {
+  //     toast.error('Phone number must be exactly 10 digits.');
+  //     return;
+  //   }
+
+  //   if (
+  //     formData.type === 'investor' &&
+  //     !validateCompanyPublishDate(formData.companyPublishDate)
+  //   ) {
+  //     toast.error('Company publish date cannot be in the future.');
+  //     return;
+  //   }
+
+  //   try {
+  //     setLoading(true)
+  //     const response = await axios.post(`${url}/api/form/submit`,formData);
+  //     if (response.data) {
+  //       toast.success("Form submitted successfully.");
+  //       setFormData({
+  //         type: 'general',
+  //         name: '',
+  //         phone: '',
+  //         email: '',
+  //         message: '',
+  //         companyName: '',
+  //         companyPublishDate: '',
+  //       });
+  //     }else{
+  //       toast.error("Error submitting form.");
+  //     }
+  //   } catch (error) {
+  //     toast.error(error.response?.data?.error || 'An error occurred during submission.');
+  //   }finally{
+  //     setLoading(false)
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,19 +104,12 @@ const ContactForm = ({url}) => {
       return;
     }
 
-    if (
-      formData.type === 'investor' &&
-      !validateCompanyPublishDate(formData.companyPublishDate)
-    ) {
-      toast.error('Company publish date cannot be in the future.');
-      return;
-    }
-
     try {
-      setLoading(true)
-      const response = await axios.post(`${url}/api/form/submit`,formData);
+      setLoading(true);
+      const response = await axios.post(`${url}/api/form/submit`, formData);
       if (response.data) {
-        toast.success("Form submitted successfully.");
+        toast.success('Form submitted successfully.');
+        sentEmail(formData);
         setFormData({
           type: 'general',
           name: '',
@@ -64,16 +119,17 @@ const ContactForm = ({url}) => {
           companyName: '',
           companyPublishDate: '',
         });
-      }else{
-        toast.error("Error submitting form.");
+      } else {
+        toast.error('Error submitting form.');
       }
     } catch (error) {
-      toast.error(error.response?.data?.error || 'An error occurred during submission.');
-    }finally{
-      setLoading(false)
+      toast.error(
+        error.response?.data?.error || 'An error occurred during submission.'
+      );
+    } finally {
+      setLoading(false);
     }
   };
-
   const info = [
     {
       title: 'Contact',
