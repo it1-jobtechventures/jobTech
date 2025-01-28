@@ -36,7 +36,7 @@ const Contact = ({url}) => {
                     <th className="p-2 border border-gray-300 text-left">Message</th>
                     <th className="p-2 border border-gray-300 text-left">Phone No.</th>
                     <th className="p-2 border border-gray-300 text-left">Company Name</th>
-                    <th className="p-2 border border-gray-300 text-left">Company Publish Date</th>
+                    {/* <th className="p-2 border border-gray-300 text-left">Company Publish Date</th> */}
                 </tr>
             </thead>
             <tbody>
@@ -49,7 +49,7 @@ const Contact = ({url}) => {
                         <td className="p-2 border border-gray-300 break-words">{item.message}</td>
                         <td className="p-2 border border-gray-300 break-words">{item.phone}</td>
                         <td className="p-2 border border-gray-300 break-words">{item.companyName}</td>
-                        <td className="p-2 border border-gray-300 break-words">{new Date(item.companyPublishDate).toLocaleDateString()}</td>
+                        {/* <td className="p-2 border border-gray-300 break-words">{new Date(item.companyPublishDate).toLocaleDateString()}</td> */}
                     </tr>
                 ))}
             </tbody>
