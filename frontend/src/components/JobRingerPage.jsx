@@ -14,7 +14,7 @@ const JobRingerPage = () => {
                 </section>
                 <section className='lg:w-[50%] text-lg pt-2 text-justify'>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci harum vitae, molestiae voluptas molestias commodi provident voluptatum eligendi. Molestiae delectus inventore rem facere debitis nostrum placeat, facilis unde veritatis quod.</p>
-                    <button className='bg-[#3678f4] text-white p-1 mt-5 rounded-md font-bold w-20'>VISIT</button>
+                    <a href='https://jobringer.com' target='_blank'><button className='bg-[#3678f4] text-white p-1 mt-5 rounded-md font-bold w-20'>VISIT</button></a>
                 </section>
             </div>
             <Performance/>
