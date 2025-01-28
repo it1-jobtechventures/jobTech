@@ -9,6 +9,7 @@ const Contact = ({url}) => {
     const fetchAllData= async () => {
         try {
             const response = await axios.get(`${url}/api/form/`)
+            console.log(response.data)
             if (response.data) {
                 setData(response.data)
                 toast.success('data fetch success')
@@ -48,7 +49,7 @@ const Contact = ({url}) => {
                         <td className="p-2 border border-gray-300 break-words">{item.name}</td>
                         <td className="p-2 border border-gray-300 break-words">{item.email}</td>
                         <td className="p-2 border border-gray-300 break-words">{item.message}</td>
-                        <td className="p-2 border border-gray-300 break-words">{item.phone}</td>
+                        <td className="p-2 border border-gray-300 break-words">+{item.countryCode}-{item.phone}</td>
                         <td className="p-2 border border-gray-300 break-words">{item.companyName}</td>
                         {/* <td className="p-2 border border-gray-300 break-words">{new Date(item.companyPublishDate).toLocaleDateString()}</td> */}
                     </tr>
