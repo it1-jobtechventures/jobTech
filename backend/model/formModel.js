@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const formSchema = new mongoose.Schema({
     type: { type: String, enum: [ 'general' , 'investor'], required: true },
     name: { type: String, required: true },
-    countryCode :{type:Number , required:true},
+    countryCode :{type:String , required:true},
     phone: { type: String, required: true },
     email: { type: String, required: true },
     message: { type: String },
