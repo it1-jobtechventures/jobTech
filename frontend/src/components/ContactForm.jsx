@@ -11,6 +11,7 @@ const ContactForm = ({url}) => {
     type: 'general',
     name: '',
     phone: '',
+    countryCode:'',
     email: '',
     message: '',
     companyName: '',
@@ -39,6 +40,7 @@ const ContactForm = ({url}) => {
       from_name: data.name,
       email: data.email,
       type:data.type,
+      countryCode:data.countryCode,
       phoneNo:data.phone,
       message:data.message,
       companyName:data.companyName
@@ -114,6 +116,7 @@ const ContactForm = ({url}) => {
           type: 'general',
           name: '',
           phone: '',
+          countryCode:'',
           email: '',
           message: '',
           companyName: '',
@@ -175,7 +178,12 @@ const ContactForm = ({url}) => {
             </div>
             <div>
               <label className="block font-medium text-gray-700">Phone</label>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
+              <div className='flex'>
+                <input type='tel' name='countryCode' value={formData.countryCode} onChange={handleChange} required placeholder='+91'  className="w-24 p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
+                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
+              </div>
+              {/* <input type='number' name='countryCode' value={formData.countryCode} onChange={handleChange} required placeholder='+91' className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
+              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/> */}
             </div>
             <div>
               <label className="block font-medium text-gray-700">Email</label>
