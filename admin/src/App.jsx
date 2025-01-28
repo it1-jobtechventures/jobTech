@@ -22,7 +22,7 @@ function App() {
           <Route path="/excel" element={<Excel url={url} />} />
           <Route path="*" element={
               <div className="text-center">
-                <h1 className="text-2xl font-bold">404 - Page Not Found</h1>
+                <h1 className="text-2xl font-bold">Click to open Page</h1>
               </div>
             }
           />
