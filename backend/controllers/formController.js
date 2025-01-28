@@ -2,12 +2,13 @@ import formModel from '../model/formModel.js';
 
 // Submit Form
 const submitForm = async (req, res) => {
-  const { type, name, phone, email, message, companyName } = req.body;
+  const { type, name, phone, email, message, companyName ,countryCode} = req.body;
 
   try {
     const newForm = new formModel({
       type,
       name,
+      countryCode,
       phone,
       email,
       message,
