@@ -64,19 +64,19 @@ const Team = () => {
         <div ref={ref} className='grid md:grid-cols-2 grid-cols-1 gap-6'>
           <div className="bg-white p-3 rounded-lg shadow-xl flex flex-col justify-center items-center  space-y-5 ">
             <p className="text-3xl font-bold text-[#3678f4]">{inView && <CountUp end={24} duration={5} /> }+</p>
-            <p className="text-sm">Projects Completed</p>
+            <p className="text-sm">Creative Minds</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow-xl flex flex-col justify-center items-center  space-y-5 ">
             <p className="text-3xl font-bold text-[#3678f4]" >{inView && <CountUp end={24} duration={5} /> }+</p>
-            <p className="text-sm">Projects Completed</p>
+            <p className="text-sm">Scientific Experts</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow-xl flex flex-col justify-center items-center  space-y-5">
             <p className="text-3xl font-bold text-[#3678f4]">{inView && <CountUp end={24} duration={5} /> }+</p>
-            <p className="text-sm">Projects Completed</p>
+            <p className="text-sm">Project Managers</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow-xl flex flex-col justify-center items-center  space-y-5 ">
             <p className="text-3xl font-bold text-[#3678f4]">{inView && <CountUp end={24} duration={5} /> }+</p>
-            <p className="text-sm">Projects Completed</p>
+            <p className="text-sm">Interns</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow-xl flex flex-col justify-center items-center  space-y-5 ">
             <p className="text-3xl font-bold text-[#3678f4]">{inView && <CountUp end={24} duration={5} /> }+</p>
