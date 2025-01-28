@@ -25,7 +25,8 @@ const Contact = ({url}) => {
     },[])
 
   return (
-    <div className="overflow-x-auto py-6">
+    <div className="overflow-x-auto py-6 mt-16">
+        <h1 className='text-2xl font-bold text-center pb-5'>Emails</h1>
         <table className="min-w-full table-auto border-collapse border border-gray-300">
             <thead>
                 <tr className="bg-gray-100">

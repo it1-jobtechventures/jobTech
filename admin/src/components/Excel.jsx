@@ -85,13 +85,15 @@ const Excel = ({url}) => {
     },[])
 
   return (
-    <div className=' shadow-2xl p-8'>
-        <div className="file-upload mb-4">
+    <div className=' shadow-2xl p-8 mt-16'>
+        <div className="mb-4">
             <h1 className="text-2xl font-bold">Excel Upload</h1>
-            <input type="file" onChange={handleFileChange} className="mt-2 p-2 border border-gray-300 rounded-md"/>
-            <button onClick={handleExcelUpload} className="mt-2 ml-2 bg-blue-500 text-white p-2 rounded-md">
-                Upload
-            </button>
+            <div className='flex md:flex-row flex-col'>
+                <input type="file" onChange={handleFileChange} className="mt-2 p-2 border border-gray-300 rounded-md"/>
+                <button onClick={handleExcelUpload} className="mt-2 ml-2 bg-blue-500 text-white p-2 rounded-md">
+                    Upload
+                </button>
+            </div>
         </div>
         <div>
         <h2 className="text-xl font-bold mb-4">Uploaded Files</h2>

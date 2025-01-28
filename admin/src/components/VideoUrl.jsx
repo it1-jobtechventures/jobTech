@@ -70,8 +70,8 @@ const VideoUrl = ({url}) => {
 
   return (
     <>
-        <div className='shadow-2xl m-6 p-10'>
-            <form onSubmit={addUrl} className='flex border rounded-md justify-between p-2 items-center'>
+        <div className='shadow-2xl m-6 md:p-10 mt-16'>
+            <form onSubmit={addUrl} className='flex border rounded-md justify-between p-2 items-center flex-col'>
                 <div className="mb-6">
                     <label htmlFor='video' className="block text-gray-700 text-sm font-medium mb-2">Add Video</label>
                     <input type='file' name='video'  onChange={handleFileChange} placeholder='Enter your' accept='' className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
