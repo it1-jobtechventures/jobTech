@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import img1 from '../assets/technology.jpg';
+import img1 from '../assets/we-are.jpg';
 import img2 from '../assets/vision2.jpeg';
 import img3 from '../assets/inspiration2.jpg';
 
@@ -26,7 +26,7 @@ const Header = () => {
   };
 
   return (
-    <div className="pt-24 px-5 lg:px-20">
+    <div className="pt-24 px-5 lg:px-20 h-screen">
       <h2 className="text-3xl lg:text-4xl font-bold text-center text-[#3678f4]">Don’t Look Back... You’re Not Going That Way</h2>
       <div className="flex flex-col lg:flex-row w-full mt-10 gap-8 lg:gap-16">
         <div className="lg:w-1/2">
