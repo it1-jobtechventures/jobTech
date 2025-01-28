@@ -161,20 +161,51 @@
 // export default Navbar;
 
 
-import React, { useState } from "react";
+
+
+
+
+
+
+
+import React, { useState ,useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import logo from "../assets/jobTech_ventures.png";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // If scrolling down and scrolled past 50px, hide navbar
+      setIsVisible(false);
+    } else {
+      // If scrolling up, show navbar
+      setIsVisible(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <>
-      <nav className="h-20 bg-white text-black fixed w-full z-50 flex items-center justify-between px-4 md:px-10 text-lg font-bold shadow-md">
+      <nav className={`h-20 bg-white text-black fixed w-full z-50 flex items-center justify-between px-4 md:px-10 text-lg font-bold shadow-md transition-transform duration-300 ${isVisible  ? "translate-y-0" : "-translate-y-full"}`}>
         <section className="flex items-center">
           <img src={logo} alt="logo" className="h-9" />
         </section>
@@ -202,7 +233,7 @@ const Navbar = () => {
             </li>
             <li>
               <HashLink smooth to="#section5" className="hover:text-blue-500 transition duration-300">
-                Our Products
+                Products
               </HashLink>
             </li>
             <li>
