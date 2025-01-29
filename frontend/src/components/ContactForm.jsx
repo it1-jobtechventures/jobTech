@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { IoCall } from 'react-icons/io5';
 import PdfShow from './PdfShow';
 import ExcelViwer from './ExcelViwer';
 import emailjs from '@emailjs/browser';
@@ -46,6 +45,8 @@ const ContactForm = ({url}) => {
     setFormData({ ...formData, [name]: value });
   };
   const sentEmail = (data) => {
+    const subject = `New Contact Form Submission - ${data.type.charAt(0).toUpperCase() + data.type.slice(1)}`;
+
     const templateParams = {
       from_name: data.name,
       email: data.email,
@@ -53,7 +54,8 @@ const ContactForm = ({url}) => {
       countryCode:data.countryCode,
       phoneNo:data.phone,
       message:data.message,
-      companyName:data.companyName
+      companyName:data.companyName,
+      subject:subject
     };
     emailjs
     .send(
@@ -63,7 +65,7 @@ const ContactForm = ({url}) => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
-      toast.success('Email sent successfully!');
+      toast.success(' form submit!');
     })
     .catch((error) => {
       toast.error('Failed to send email: ' + error.text);
@@ -82,7 +84,6 @@ const ContactForm = ({url}) => {
       setLoading(true);
       const response = await axios.post(`${url}/api/form/submit`, formData);
       if (response.data) {
-        toast.success('Form submitted successfully.');
         sentEmail(formData);
         setFormData({
           type: 'general',
