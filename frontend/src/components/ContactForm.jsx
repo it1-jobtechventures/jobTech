@@ -21,14 +21,24 @@ const ContactForm = ({url}) => {
 
   const validatePhone = (phone) => /^\d{10}$/.test(phone);
 
-  // const validateCompanyPublishDate = (date) => {
-  //   const today = new Date();
-  //   const selectedDate = new Date(date);
-  //   return selectedDate <= today;
-  // };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === "countryCode") {
+      if (!/^\d{0,3}$/.test(value)) {
+        toast.error("Country code must be a number (max 3 digits) and cannot contain special symbols.");
+        return;
+      }
+      if (value.length > 3) {
+        toast.error("Country code cannot be more than 3 digits.");
+        return;
+      }
+      if (parseInt(value, 10) < 0) {
+        toast.error("Country code cannot be negative.");
+        return;
+      }
+    }
       // Allow only numbers in the phone input
       if (name === "phone" && !/^\d*$/.test(value)) {
         return; // Ignore non-numeric input
@@ -59,45 +69,7 @@ const ContactForm = ({url}) => {
       toast.error('Failed to send email: ' + error.text);
     });
 };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
 
-  //   if (!validatePhone(formData.phone)) {
-  //     toast.error('Phone number must be exactly 10 digits.');
-  //     return;
-  //   }
-
-  //   if (
-  //     formData.type === 'investor' &&
-  //     !validateCompanyPublishDate(formData.companyPublishDate)
-  //   ) {
-  //     toast.error('Company publish date cannot be in the future.');
-  //     return;
-  //   }
-
-  //   try {
-  //     setLoading(true)
-  //     const response = await axios.post(`${url}/api/form/submit`,formData);
-  //     if (response.data) {
-  //       toast.success("Form submitted successfully.");
-  //       setFormData({
-  //         type: 'general',
-  //         name: '',
-  //         phone: '',
-  //         email: '',
-  //         message: '',
-  //         companyName: '',
-  //         companyPublishDate: '',
-  //       });
-  //     }else{
-  //       toast.error("Error submitting form.");
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.response?.data?.error || 'An error occurred during submission.');
-  //   }finally{
-  //     setLoading(false)
-  //   }
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -133,23 +105,6 @@ const ContactForm = ({url}) => {
       setLoading(false);
     }
   };
-  const info = [
-    {
-      title: 'Contact',
-      content: '0984537278623\nyourmail@gmail.com',
-      icon: <IoCall />,
-    },
-    {
-      title: 'Address',
-      content: '175 5th Ave, New York, NY 10010\nUnited States',
-      icon: <IoCall />,
-    },
-    {
-      title: 'Schedule',
-      content: '04 Hours / 7 Days Open\nOffice time: 10 AM - 5:30 PM',
-      icon: <IoCall />,
-    },
-  ];
 
   return (
     <div className=" py-12 pt-24 " id='section6'>
@@ -182,8 +137,6 @@ const ContactForm = ({url}) => {
                 <input type='tel' name='countryCode' value={formData.countryCode} onChange={handleChange} required placeholder='+91'  className="w-24 p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
                 <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
               </div>
-              {/* <input type='number' name='countryCode' value={formData.countryCode} onChange={handleChange} required placeholder='+91' className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-[#3678f4]"/> */}
             </div>
             <div>
               <label className="block font-medium text-gray-700">Email</label>
@@ -200,10 +153,6 @@ const ContactForm = ({url}) => {
                   <label className="block font-medium text-gray-700">Company Name</label>
                   <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700"/>
                 </div>
-                {/* <div>
-                  <label className="block font-medium text-gray-700">Company Publish Date</label>
-                  <input type="date" name="companyPublishDate" value={formData.companyPublishDate} onChange={handleChange} required className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-700" />
-                </div> */}
               </>
             )}
             <button type="submit" disabled={loading} className="w-full py-3 bg-[#3678f4] text-white rounded hover:bg-blue-800 transition duration-300">
