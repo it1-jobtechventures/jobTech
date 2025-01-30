@@ -288,7 +288,7 @@ const ContactForm = ({url}) => {
       };
       emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        'template_7unbo7c', // Use a different template ID for the auto-reply
+        import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_KEY, // Use a different template ID for the auto-reply
         autoReplyParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       ).then(() => {
