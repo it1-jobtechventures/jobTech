@@ -17,14 +17,12 @@ function App() {
     <>
       <ToastContainer  />
       <Navbar url={url}/>
-      <Header  url={url}/>
+       <Header  url={url}/>
       <Video url={url}/>
       <Overview url={url}/>
       <Team url={url}/>
       <JobRingerPage url={url}/>
-      {/* <Performance/> */}
       <ContactForm  url={url}/>
-      {/* <PdfShow/> */}
       <Footer  url={url}/>
       <ScrollToTopButton url={url}/>
     </>

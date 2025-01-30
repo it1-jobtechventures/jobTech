@@ -184,7 +184,9 @@ const ContactForm = ({url}) => {
                 </div>
               </>
             )}
-            <ReCAPTCHA sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} onChange={handleCaptchaChange} ref={recaptchaRef} />
+            <div className='-full max-w-lg mx-auto'>
+              <ReCAPTCHA sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} onChange={handleCaptchaChange} ref={recaptchaRef}  style={{ width: '100%' }}  className=''/>
+            </div>
             <button type="submit" disabled={loading} className="w-full py-3 bg-[#3678f4] text-white rounded hover:bg-blue-800 transition duration-300">
               {loading ? (
                 <div className="flex justify-center items-center">
