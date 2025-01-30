@@ -3,7 +3,7 @@ import formModel from '../model/formModel.js';
 // Submit Form
 const submitForm = async (req, res) => {
   const { type, name, phone, email, message, companyName ,countryCode , token  } = req.body;
-  console.log(token ,"from backend")
+  console.log("from backend",token)
   if (!token) {
     return res.status(400).json({ error: 'ReCAPTCHA verification failed' });
   }
