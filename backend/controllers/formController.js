@@ -19,6 +19,7 @@ const submitForm = async (req, res) => {
         },
       }
     );
+    console.log("reCAPTCHA Response:", recaptchaResponse.data);
      if (!recaptchaResponse.data.success) {
       return res.status(400).json({ error: 'Failed reCAPTCHA verification' });
     }
