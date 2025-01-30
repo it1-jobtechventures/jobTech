@@ -2,9 +2,25 @@ import formModel from '../model/formModel.js';
 
 // Submit Form
 const submitForm = async (req, res) => {
-  const { type, name, phone, email, message, companyName ,countryCode} = req.body;
-
+  const { type, name, phone, email, message, companyName ,countryCode , token  } = req.body;
+  if (!token) {
+    return res.status(400).json({ error: 'ReCAPTCHA verification failed' });
+  }
   try {
+    // Verify ReCAPTCHA with Google
+    const recaptchaResponse = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      null,
+      {
+        params: {
+          secret: process.env.RECAPTCHA_SECRET_KEY, // Use secret key from .env
+          response: token,
+        },
+      }
+    );
+     if (!recaptchaResponse.data.success) {
+      return res.status(400).json({ error: 'Failed reCAPTCHA verification' });
+    }
     const newForm = new formModel({
       type,
       name,
