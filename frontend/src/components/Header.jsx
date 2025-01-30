@@ -9,7 +9,7 @@ const Header = () => {
   const data = {
     'who-we-are': {
       image: img1,
-      text: 'JOBTECH VENTURES is conceptualized to drive further the futuristic aspirations of businesses and young talent together. We are committed to adopt and develop new technologies to provide a wider range of offerings and a better experience to our customers.',
+      text: 'JOBTECH VENTURES is conceptualized to create a collaborative ecosystem that fosters growth and nurtures innovation to drive the futuristic aspirations of businesses and young talent together. Our commitment to continuous innovation drives us to explore and implement cutting-edge solutions, ensuring that our customers experience unparalleled value and service.',
     },
     vision: {
       image: img2,
