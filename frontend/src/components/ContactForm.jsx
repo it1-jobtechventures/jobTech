@@ -319,7 +319,9 @@ const ContactForm = ({url}) => {
 
     try {
       setLoading(true);
-      const response = await axios.post(`${url}/api/form/submit`, formData , {token:captchaToken});
+      // const response = await axios.post(`${url}/api/form/submit`, formData , {token:captchaToken});
+      const response = await axios.post(`${url}/api/form/submit`, { ...formData, token: captchaToken });
+
       if (response.data) {
         sentEmail(formData);
         setFormData({
