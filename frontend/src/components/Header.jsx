@@ -89,7 +89,7 @@ With an aspiration to create enduring values, under the steering leadership of M
         </div>
         <div className="lg:w-1/2 space-y-5">
           <h1 className="text-lg font-semibold text-gray-600 tracking-wide uppercase text-center md:text-start">
-            -- Our Story
+            JOBTECH VENTURES PRIVATE LIMITED
           </h1>
           <div className="flex md:flex-row flex-col gap-3">
             {['who-we-are', 'vision', 'Inspiration'].map((tab) => (
