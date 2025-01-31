@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaPinterestP, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import profile from "../assets/profile.jpg";
+import profile2 from "../assets/team1.png";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
@@ -25,7 +26,7 @@ const Team = () => {
     {
       name: "Riley Beata",
       title: "Web Developer",
-      image: profile,
+      image: profile2,
       socials: [
         { icon: <FaFacebookF />, url: "#" },
         { icon: <FaLinkedinIn />, url: "#" },
