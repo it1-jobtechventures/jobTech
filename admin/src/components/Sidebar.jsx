@@ -40,6 +40,11 @@ const Sidebar = () => {
                 Excel
               </NavLink>
             </li>
+            <li className="px-4 py-2">
+              <NavLink to="/faq" className={({ isActive }) =>`block px-4 py-2 rounded ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'}`}onClick={handleLinkClick} >
+                Faq
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>

@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import VideoUrl from './components/VideoUrl';
 import Pdf from './components/Pdf';
 import Excel from './components/Excel';
+import Faq from './components/faq';
 
 function App() {
   const url = "https://jobtech-backend.onrender.com";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/video-url" element={<VideoUrl url={url} />} />
           <Route path="/pdf" element={<Pdf url={url} />} />
           <Route path="/excel" element={<Excel url={url} />} />
+          <Route path='/faq' element={<Faq url={url}/>}/>
           <Route path="*" element={
               <div className="text-center">
                 <h1 className="text-2xl font-bold">Click to open Page</h1>
