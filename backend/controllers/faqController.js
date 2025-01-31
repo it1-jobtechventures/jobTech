@@ -35,4 +35,22 @@ const removeFaq = async (req, res) => {
     }
 }
 
-export {faqAdd , listFaq , removeFaq}
+const updateFaq = async (req, res) => {
+    try {
+        const { id, question, answer } = req.body;
+        const updatedFaq = await faqModel.findByIdAndUpdate(
+            id,
+            { question, answer },
+            { new: true }
+        );
+        if (!updatedFaq) {
+            return res.json({ success: false, message: 'FAQ not found.' });
+        }
+        res.json({ success: true, message: 'FAQ updated successfully.' });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+export { faqAdd, listFaq, removeFaq, updateFaq };
