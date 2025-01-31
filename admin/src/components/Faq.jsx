@@ -29,13 +29,14 @@ const Faq = ({url}) => {
         formData.append('question' , data.question);
         formData.append('answer',data.answer)
         try {
-            const response = await axios.post('http://localhost:4000/api/faq/add', {question: data.question,answer: data.answer}, {headers: { 'Content-Type': 'application/json' }});
+            const response = await axios.post(`${url}/api/faq/add`, {question: data.question,answer: data.answer}, {headers: { 'Content-Type': 'application/json' }});
             if (response.data.success) {
                 toast.success(response.data.message);
                 setData({
                     question:'',
                     answer:''
                 })
+                fetchFAQ()
             } else {
                 toast.error(response.data.message);
             }
@@ -67,7 +68,7 @@ const Faq = ({url}) => {
 
     const fetchFAQ = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/faq/list')
+            const response = await axios.get(`${url}/api/faq/list`)
             if (response.data.success) {
                 setListFaq(response.data.data)
             } else {
@@ -84,7 +85,7 @@ const Faq = ({url}) => {
 
     const removeFaq = async(faqId) => {
         try {
-            const response = await axios.post('http://localhost:4000/api/faq/delete' , {id:faqId})
+            const response = await axios.post(`${url}/api/faq/delete` , {id:faqId})
             await fetchFAQ()
             if (response.data.success) {
                 toast.success('faq removed successfully.');
@@ -123,7 +124,7 @@ const Faq = ({url}) => {
                                 <div>
                                     <div className=''>
                                         <p>{list.question}</p>
-                                        <p>{list.answer}</p>
+                                        <div className="faq-answer" dangerouslySetInnerHTML={{ __html: list.answer }}/>
                                         <div>
                                             <button>Update</button>
                                             <button onClick={() => removeFaq(list._id)}>Remove</button>
