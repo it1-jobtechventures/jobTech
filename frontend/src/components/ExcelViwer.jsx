@@ -133,57 +133,41 @@ const ExcelViewer = ({ url }) => {
     <>
       {/* Button to open the modal */}
       <div className="space-y-6">
-        <div
-          className="cursor-pointer shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300"
-          onClick={openModal}
-        >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#3678f4] text-white text-xl">
+        <div className="cursor-pointer shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300" onClick={openModal}>
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#424343] text-white text-xl">
             📊
           </div>
           <div>
-            <h2 className="text-lg font-bold text-[#3678f4]">View Latest Excel</h2>
+            <h2 className="text-lg font-bold text-[#424343]">View Latest Excel</h2>
             <p className="text-gray-600 whitespace-pre-line">Open the most recently uploaded Excel</p>
           </div>
         </div>
       </div>
-
-      <Modal
-  isOpen={modalIsOpen}
-  onRequestClose={closeModal}
-  contentLabel="View Excel"
-  className="fixed inset-0 bg-white p-4 w-11/12 md:w-3/4 mx-auto my-auto rounded-lg shadow-lg mt-20 overflow-hidden"
-  overlayClassName="fixed inset-0 bg-black bg-opacity-50"
->
-  <div className="flex justify-between items-center border-b pb-2 mb-4">
-    <h2 className="text-lg font-bold">Excel Viewer</h2>
-    <button onClick={closeModal} className="text-xl font-bold text-gray-700 hover:text-black">
-      ✕
-    </button>
-  </div>
-  <div className="modal-body overflow-x-auto overflow-y-hidden">
-    {excelData.length > 0 ? (
-      <div className="w-full overflow-x-auto">
-        <table className="table-auto min-w-full border-collapse border border-gray-300">
-          <thead className="bg-gray-100">
-            <tr>
-              {Object.keys(excelData[0]).map((key) => (
-                <th
-                  key={key}
-                  className="border border-gray-300 px-2 py-1 text-left text-xs font-medium text-gray-700"
-                >
-                  {key}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="View Excel" className="fixed inset-0 bg-white p-4 w-11/12 md:w-3/4 mx-auto my-auto rounded-lg shadow-lg mt-20 overflow-hidden" overlayClassName="fixed inset-0 bg-black bg-opacity-50">
+        <div className="flex justify-between items-center border-b pb-2 mb-4">
+          <h2 className="text-lg font-bold">Excel Viewer</h2>
+          <button onClick={closeModal} className="text-xl font-bold text-gray-700 hover:text-black">
+            ✕
+          </button>
+        </div>
+        <div className="modal-body overflow-x-auto overflow-y-hidden">
+          {excelData.length > 0 ? (
+            <div className="w-full overflow-x-auto">
+              <table className="table-auto min-w-full border-collapse border border-gray-300">
+                <thead className="bg-gray-100">
+                  <tr>
+                    {Object.keys(excelData[0]).map((key) => (
+                      <th key={key} className="border border-gray-300 px-2 py-1 text-left text-xs font-medium text-gray-700">
+                        {key}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
             {excelData.map((row, rowIndex) => (
               <tr key={rowIndex} className="hover:bg-gray-50">
                 {Object.values(row).map((value, colIndex) => (
-                  <td
-                    key={colIndex}
-                    className="border border-gray-300 px-2 py-1 text-xs text-gray-600"
-                  >
+                  <td key={colIndex} className="border border-gray-300 px-2 py-1 text-xs text-gray-600">
                     {value}
                   </td>
                 ))}

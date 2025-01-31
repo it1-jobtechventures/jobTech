@@ -25,7 +25,7 @@ const ScrollToTopButton = () => {
 
   return (
     visible && (
-        <button onClick={scrollToTop} className="fixed bottom-5 right-5 bg-[#3678f4] text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition">
+        <button onClick={scrollToTop} className="fixed bottom-5 right-5 bg-[#ed1c24] text-white p-3 rounded-full shadow-lg hover:bg-[#b82d32] transition">
             <span className="text-xl"><FaAngleUp/></span> 
         </button>
     )

@@ -149,10 +149,10 @@ const ContactForm = ({url}) => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* User Type Selector */}
             <div className="flex space-x-4">
-              <button type="button"className={`px-4 py-2 rounded ${ formData.type === 'general'?' bg-[#3678f4] text-white':'bg-gray-200 text-gray-700'}`}onClick={() => setFormData({ ...formData, type: 'general' })}>
+              <button type="button"className={`px-4 py-2 rounded ${ formData.type === 'general'?' bg-[#ed1c24] text-white':'bg-gray-200 text-gray-700'}`}onClick={() => setFormData({ ...formData, type: 'general' })}>
                 General
               </button>
-              <button type="button" className={`px-4 py-2 rounded ${formData.type === 'investor'?'bg-[#3678f4] text-white':'bg-gray-200 text-gray-700'}`} onClick={() => setFormData({ ...formData, type: 'investor' })}>
+              <button type="button" className={`px-4 py-2 rounded ${formData.type === 'investor'?'bg-[#ed1c24] text-white':'bg-gray-200 text-gray-700'}`} onClick={() => setFormData({ ...formData, type: 'investor' })}>
                 Investor
               </button>
             </div>
@@ -187,7 +187,7 @@ const ContactForm = ({url}) => {
             <div className='-full max-w-lg mx-auto'>
               <ReCAPTCHA sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} onChange={handleCaptchaChange} ref={recaptchaRef}  style={{ width: '100%' }}  className=''/>
             </div>
-            <button type="submit" disabled={loading} className="w-full py-3 bg-[#3678f4] text-white rounded hover:bg-blue-800 transition duration-300">
+            <button type="submit" disabled={loading} className="w-full py-3 bg-[#ed1c24] text-white rounded hover:bg-[#b82d32] transition duration-300">
               {loading ? (
                 <div className="flex justify-center items-center">
                   <div className="w-6 h-6 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>

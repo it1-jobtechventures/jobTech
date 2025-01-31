@@ -82,7 +82,7 @@ With an aspiration to create enduring values, under the steering leadership of M
 
   return (
     <div className="pt-32 px-5 lg:px-20 2xl:h-screen" id='section1'>
-      <h2 className="text-3xl lg:text-4xl font-bold text-center text-[#3678f4]">Don’t Look Back... You’re Not Going That Way</h2>
+      <h2 className="text-3xl lg:text-4xl font-bold text-center text-[#424343]">Don’t Look Back... You’re Not Going That Way</h2>
       <div className="flex flex-col lg:flex-row w-full mt-10 gap-8 lg:gap-16 ">
         <div className="lg:w-1/2">
           <img src={data[activeTab].image} alt={activeTab} className="w-full rounded-lg shadow-lg"/>
@@ -93,7 +93,7 @@ With an aspiration to create enduring values, under the steering leadership of M
           </h1>
           <div className="flex md:flex-row flex-col gap-3">
             {['who-we-are', 'vision', 'Inspiration'].map((tab) => (
-              <button key={tab} className={`px-4 py-2 rounded-lg text-sm font-medium ${ activeTab === tab ? 'bg-[#3678f4] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`} onClick={() => handleTabChange(tab)}>
+              <button key={tab} className={`px-4 py-2 rounded-lg text-sm font-medium ${ activeTab === tab ? 'bg-[#424343] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`} onClick={() => handleTabChange(tab)}>
                 {tab.replace('-', ' ').toUpperCase()}
               </button>
             ))}

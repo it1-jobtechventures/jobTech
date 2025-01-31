@@ -42,32 +42,32 @@ const Navbar = () => {
         <section className="hidden md:flex">
           <ul className="flex lg:gap-8 md:gap-4">
             <li>
-              <HashLink smooth to="#section1" className="hover:text-blue-500 transition duration-300">
+              <HashLink smooth to="#section1" className="hover:text-[#ed1c24] transition duration-300">
                 Home
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="#section2" className="hover:text-blue-500 transition duration-300">
+              <HashLink smooth to="#section2" className="hover:text-[#ed1c24] transition duration-300">
                 Video
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="#section3" className="hover:text-blue-500 transition duration-300">
+              <HashLink smooth to="#section3" className="hover:text-[#ed1c24] transition duration-300">
                 Overview
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="#section4" className="hover:text-blue-500 transition duration-300">
+              <HashLink smooth to="#section4" className="hover:text-[#ed1c24] transition duration-300">
                 Team
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="#section5" className="hover:text-blue-500 transition duration-300">
+              <HashLink smooth to="#section5" className="hover:text-[#ed1c24] transition duration-300">
                 Products
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="#section6" className="hover:text-blue-500 transition duration-300">
+              <HashLink smooth to="#section6" className="hover:text-[#ed1c24] transition duration-300">
                 Contact
               </HashLink>
             </li>

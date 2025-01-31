@@ -44,11 +44,11 @@ const PdfShow = ({url}) => {
       {/* Button to open the modal */}
       <div className="space-y-6">
         <div className="cursor-pointer shadow-lg flex items-center gap-4 p-6 rounded-lg bg-white hover:shadow-xl transition duration-300" onClick={openModal}>
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#3678f4] text-white text-xl">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#424343] text-white text-xl">
             📄
           </div>
           <div>
-            <h2 className="text-lg font-bold text-[#3678f4]">View Latest PDF</h2>
+            <h2 className="text-lg font-bold text-[#424343]">View Latest PDF</h2>
             <p className="text-gray-600 whitespace-pre-line">Open the most recent uploaded PDF</p>
           </div>
         </div>
