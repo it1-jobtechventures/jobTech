@@ -98,36 +98,36 @@ const Faq = ({url}) => {
     }
   return (
     <>
-        <main>
-            <div>
-                <h1>Add questions</h1>
+        <main className="p-6 md:p-10 lg:p-14 pt-24">
+            <div className="mb-8">
+                <h1 className="text-2xl font-semibold mb-4">Add a New Question</h1>
                 <div>
-                    <form onSubmit={onSubmit}>
-                        <div>
-                            <label className=''>Type Question</label>
-                            <input type='text' onChange={onChangeHandler} value={data.question} name='question' />
+                    <form onSubmit={onSubmit} className="space-y-4">
+                        <div className="flex flex-col">
+                            <label className="text-lg font-medium">Type Question</label>
+                            <input type='text' onChange={onChangeHandler} value={data.question} name='question' className="mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                         <div>
-                            <label className=''>Type Answer</label>
-                            <JoditEditor ref={editorRef} value={data.answer} config={editorConfig} onBlur={onEditorChange} />
+                            <label className="text-lg font-medium">Type Answer</label>
+                            <JoditEditor ref={editorRef} value={data.answer} config={editorConfig} onBlur={onEditorChange} className="mt-2"/>
                         </div>
-                        <button type='submit'>Submit</button>
+                        <button type='submit' className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
                     </form>
                 </div>
             </div>
             <div>
-                <h1>List of faq</h1>
-                <div>
+                <h1 className="text-2xl font-semibold mb-4">List of faq</h1>
+                <div className="space-y-4">
                     {
                         listFaq.map((list) => (
                             <>
-                                <div>
-                                    <div className=''>
-                                        <p>{list.question}</p>
-                                        <div className="faq-answer" dangerouslySetInnerHTML={{ __html: list.answer }}/>
-                                        <div>
-                                            <button>Update</button>
-                                            <button onClick={() => removeFaq(list._id)}>Remove</button>
+                                <div key={list._id} className="border-b border-gray-300 pb-4">
+                                    <div className='shadow-2xl p-5'>
+                                        <p className="text-xl font-semibold">{list.question}</p>
+                                        <div className="faq-answer mt-2" dangerouslySetInnerHTML={{ __html: list.answer }}/>
+                                        <div className="mt-4 flex space-x-4">
+                                            <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500">Update</button>
+                                            <button onClick={() => removeFaq(list._id)} className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">Remove</button>
                                         </div>
                                     </div>
                                 </div>
