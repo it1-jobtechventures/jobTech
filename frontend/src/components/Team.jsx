@@ -100,7 +100,7 @@ const Team = () => {
       {/* Team Member Cards */}
       <div className="flex flex-wrap justify-center gap-6 m-6">
         <div className="bg-director-gradient shadow-lg rounded-xl p-6 flex flex-col lg:flex-row gap-6 items-center md:w-[40%] w-full hover:shadow-2xl transition-shadow duration-300">
-          <img src={profile} alt="John Doe" className="w-24 h-24 rounded-full object-cover mb-4" />
+          <img src={profile} alt="John Doe" className="w-36 h-36 rounded-full object-cover mb-4" />
           <div className="text-center lg:text-left">
             <h3 className="text-xl font-semibold text-gray-800">John Doe</h3>
             <p className="text-sm text-gray-500">CEO & Founder</p>
@@ -119,7 +119,7 @@ const Team = () => {
         </div>
 
         <div className="bg-director-gradient shadow-lg rounded-xl p-6 flex flex-col lg:flex-row gap-6 items-center  md:w-[40%] w-full  hover:shadow-2xl transition-shadow duration-300">
-          <img src={profile2} alt="Jane Doe" className="w-24 h-24 rounded-full object-cover mb-4" />
+          <img src={profile2} alt="Jane Doe" className="w-36 h-36 rounded-full object-cover mb-4" />
           <div className="text-center lg:text-left">
             <h3 className="text-xl font-semibold text-gray-800">Jane Doe</h3>
             <p className="text-sm text-gray-500">Lead Developer</p>
@@ -142,10 +142,7 @@ const Team = () => {
       <div className="flex justify-center items-center">
         <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6 mt-10 justify-center">
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white w-full md:w-44 p-4 rounded-lg shadow-xl flex flex-col justify-center items-center space-y-2 hover:shadow-2xl transition-shadow duration-300"
-            >
+            <div key={index} className="bg-white w-full md:w-44 p-4 rounded-lg shadow-xl flex flex-col justify-center items-center space-y-2 hover:shadow-2xl transition-shadow duration-300">
               <p className="text-3xl font-bold text-[#6B727F]">
                 {inView && <CountUp end={stat.value} duration={5} />}+
               </p>

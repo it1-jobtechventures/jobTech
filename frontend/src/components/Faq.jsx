@@ -17,7 +17,7 @@ const Faq = ({url}) => {
         }
     }
 
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState(0);
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
