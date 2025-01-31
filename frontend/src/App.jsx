@@ -10,6 +10,7 @@ import ScrollToTopButton from './components/ScrollTopToBottom';
 import Video from './components/Video';
 import Overview from './components/Overview';
 import JobRingerPage from './components/JobRingerPage';
+import Faq from './components/Faq';
 
 function App() {
   const url ='https://jobtech-backend.onrender.com'
@@ -22,6 +23,7 @@ function App() {
       <Overview url={url}/>
       <Team url={url}/>
       <JobRingerPage url={url}/>
+      <Faq url={url}/>
       <ContactForm  url={url}/>
       <Footer  url={url}/>
       <ScrollToTopButton url={url}/>
