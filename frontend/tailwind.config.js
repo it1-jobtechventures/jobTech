@@ -9,6 +9,10 @@ export default {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%)',
         'director-gradient':'linear-gradient(147deg, #c3cbdc 0%, #edf1f4 15%)',
+        'performace-border':'0.5px solid rgb(159 159 159 / 57%)',
+      },
+      borderColor: {
+        'performace-border': 'rgb(159 159 159 / 57%)', // Ensure it's also added to borderColor
       },
     },
   },
