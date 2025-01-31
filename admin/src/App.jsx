@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import VideoUrl from './components/VideoUrl';
 import Pdf from './components/Pdf';
 import Excel from './components/Excel';
-import Faq from './components/faq';
+import Faq from './components/Faq';
 
 function App() {
   const url = "https://jobtech-backend.onrender.com";
