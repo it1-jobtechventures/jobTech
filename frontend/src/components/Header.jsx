@@ -52,9 +52,9 @@
 
 // export default Header;
 import React, { useState } from 'react';
-import img1 from '../assets/we-are.jpg';
+import img1 from '../assets/weAre2.jpg';
 import img2 from '../assets/vision2.jpeg';
-import img3 from '../assets/inspiration2.jpg';
+import img3 from '../assets/vision.jpg';
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState('who-we-are');
