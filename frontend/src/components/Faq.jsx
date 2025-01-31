@@ -39,7 +39,7 @@ const Faq = ({url}) => {
                             <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
                         </button>
                         {openIndex === index && (
-                            <div className="mt-2 p-3 bg-gray-50 text-justify no-scrollbar border-l-4 border-blue-500 rounded-md max-h-52 overflow-y-auto">
+                            <div className="mt-2 p-3 bg-gray-50 text-justify  border-l-4 border-blue-500 rounded-md max-h-52 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
                                 <div className="faq-answer" dangerouslySetInnerHTML={{ __html: faq.answer }}/>
                             </div>
                         )}
