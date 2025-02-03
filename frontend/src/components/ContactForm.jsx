@@ -5,6 +5,7 @@ import PdfShow from './PdfShow';
 import ExcelViwer from './ExcelViwer';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
+import Video from './Video';
 
 const ContactForm = ({url}) => {
   const [formData, setFormData] = useState({
@@ -141,6 +142,7 @@ const ContactForm = ({url}) => {
         <div className='flex flex-col gap-5'>
         <PdfShow url={url}/>
         <ExcelViwer url={url}/>
+        <Video url={url}/>
         </div>
 
         {/* Contact Form */}
