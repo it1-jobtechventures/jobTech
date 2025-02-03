@@ -18,8 +18,8 @@ function App() {
     <>
       <ToastContainer  />
       <Navbar url={url}/>
-       <Header  url={url}/>
-      <Video url={url}/>
+      <Header  url={url}/>
+      {/* <Video url={url}/> */}
       <Overview url={url}/>
       <Team url={url}/>
       <JobRingerPage url={url}/>
