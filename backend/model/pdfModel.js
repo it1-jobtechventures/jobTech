@@ -5,7 +5,9 @@ const pdfSchema = new mongoose.Schema({
   url: { type: String, required: true },
   cloudinary_id: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
+  sequence: { type: Number, required: true, unique: true },  
+  title:{ type: String, required: true },
 });
 
-const pdfModel = mongoose.models.pdf || mongoose.model("pdf", pdfSchema)
+const pdfModel = mongoose.models.pdf || mongoose.model("pdf", pdfSchema);
 export default pdfModel;
