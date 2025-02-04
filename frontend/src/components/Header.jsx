@@ -82,7 +82,7 @@ With an aspiration to create enduring values, under the steering leadership of M
 
   return (
     <div className="pt-32 px-5 lg:px-20 2xl:h-screen" id='section1'>
-      <h2 className="text-3xl lg:text-4xl font-bold text-center text-[#424343]">Don’t Look Back... You’re Not Going That Way</h2>
+      {/* <h2 className="text-3xl lg:text-4xl font-bold text-center text-[#424343]">Don’t Look Back... You’re Not Going That Way</h2> */}
       <div className="flex flex-col lg:flex-row w-full mt-10 gap-8 lg:gap-16 ">
         <div className="lg:w-1/2">
           <img src={data[activeTab].image} alt={activeTab} className="w-full rounded-lg shadow-lg"/>
