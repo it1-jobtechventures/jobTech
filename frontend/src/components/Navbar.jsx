@@ -46,11 +46,11 @@ const Navbar = () => {
                 Home
               </HashLink>
             </li>
-            <li>
+            {/* <li>
               <HashLink smooth to="#section2" className="hover:text-[#ed1c24] transition duration-300">
                 Video
               </HashLink>
-            </li>
+            </li> */}
             <li>
               <HashLink smooth to="#section3" className="hover:text-[#ed1c24] transition duration-300">
                 Overview
@@ -95,11 +95,11 @@ const Navbar = () => {
                 Home
               </HashLink>
             </li>
-            <li>
+            {/* <li>
               <HashLink smooth to="#section2" onClick={toggleSidebar} className="hover:text-gray-200 transition duration-300">
                 Video
               </HashLink>
-            </li>
+            </li> */}
             <li>
               <HashLink smooth to="#section3" onClick={toggleSidebar} className="hover:text-gray-200 transition duration-300">
                 Overview
