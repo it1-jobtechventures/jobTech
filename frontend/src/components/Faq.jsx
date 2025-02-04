@@ -94,7 +94,7 @@ const Faq = ({url}) => {
                             <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
                         </button>
                         {openIndex === index && (
-                            <div className="mt-2 p-3 bg-gray-50 text-justify  border-l-4 border-[#6B727F] rounded-md lg:overflow-y-hidden overflow-y-auto   scrollbar-thin scrollbar-thumb-[#6B727F] scrollbar-track-gray-200">
+                            <div className="mt-2 p-3 bg-gray-50 text-justify  border-l-4 border-[#6B727F] rounded-md lg:max-h-none lg:overflow-hidden  overflow-y-auto max-h-52  scrollbar-thin scrollbar-thumb-[#6B727F] scrollbar-track-gray-200">
                                 <div className="faq-answer" dangerouslySetInnerHTML={{ __html: faq.answer }}/>
                             </div>
                         )}
