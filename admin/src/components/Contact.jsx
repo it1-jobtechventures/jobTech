@@ -9,7 +9,6 @@ const Contact = ({url}) => {
     const fetchAllData= async () => {
         try {
             const response = await axios.get(`${url}/api/form/`)
-            console.log(response.data)
             if (response.data) {
                 setData(response.data)
                 toast.success('data fetch success')

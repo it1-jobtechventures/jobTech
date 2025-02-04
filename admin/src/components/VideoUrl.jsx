@@ -7,6 +7,7 @@ import {toast} from 'react-toastify'
 const VideoUrl = ({url}) => {
     const [data , setData ] = useState([])
     const [video , setVideo] = useState(null)
+    const [loading, setLoading] = useState(false);
 
     // Handle file selection
     const handleFileChange = (event) => {
@@ -18,6 +19,7 @@ const VideoUrl = ({url}) => {
         try {
             const formData = new FormData();
             formData.append('video', video);
+            setLoading(true)
             const response = await axios.post(`${url}/api/videoUrl/add`,formData , {headers : {'Content-Type' : 'multipart/form-data'}})
             if (response.data.success) {
                 toast.success("added ")
@@ -29,6 +31,8 @@ const VideoUrl = ({url}) => {
         } catch (error) {
             console.log(error.message)
             toast.error(error.message)
+        }finally{
+            setLoading(false)
         }
     }
 
@@ -76,7 +80,15 @@ const VideoUrl = ({url}) => {
                     <label htmlFor='video' className="block text-gray-700 text-sm font-medium mb-2">Add Video</label>
                     <input type='file' name='video'  onChange={handleFileChange} placeholder='Enter your' accept='' className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
                 </div>
-                <button type='submit' className='bg-blue-700 p-2 rounded-md h-10 w-20 text-white'>Add</button>
+                <button type='submit' className='bg-blue-700 p-2 rounded-md h-10 w-20 text-white'>
+                    {loading ? (
+                        <div className="flex justify-center items-center">
+                            <div className="w-6 h-6 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+                        </div>
+                    ):(
+                        'Add'
+                    )}
+                </button>
             </form>
         </div>
         <main className="overflow-x-auto py-6">

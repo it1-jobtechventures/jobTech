@@ -8,6 +8,7 @@ const Excel = ({url}) => {
     const [data, setData] = useState([]);
     const [modalData, setModalData] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     // Handle file selection
     const handleFileChange = (event) => {
@@ -23,6 +24,7 @@ const Excel = ({url}) => {
         const formData = new FormData();
         formData.append('file', excel);
         try {
+            setLoading(true)
             const response = await axios.post(`${url}/api/excel/upload`, formData, {headers: { 'Content-Type': 'multipart/form-data', },});
             if (response.data) {
                 toast.success('File uploaded successfully!');
@@ -37,6 +39,8 @@ const Excel = ({url}) => {
             }
             toast.error('Error uploading file.');
             console.error(error);
+        }finally{
+            setLoading(false)
         }
     }
     
@@ -55,12 +59,15 @@ const Excel = ({url}) => {
       // Handle file deletion
     const handleFileDelete = async (excelId) => {
         try {
+            setLoading(true)
             await axios.delete(`${url}/api/excel/${excelId}`);
             toast.success('File deleted successfully!');
             displayExcel() // Refresh the file list
         } catch (error) {
             toast.error('Error deleting file.');
             console.error(error);
+        }finally{
+            setLoading(false)
         }
     };
 
@@ -91,7 +98,14 @@ const Excel = ({url}) => {
             <div className='flex md:flex-row flex-col'>
                 <input type="file" onChange={handleFileChange} className="mt-2 p-2 border border-gray-300 rounded-md"/>
                 <button onClick={handleExcelUpload} className="mt-2 ml-2 bg-blue-500 text-white p-2 rounded-md">
-                    Upload
+                    {loading ? (
+                        <div className="flex justify-center items-center">
+                            <div className="w-6 h-6 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+                        </div>
+                        ):(
+                            'Upload'
+                        )
+                    }
                 </button>
             </div>
         </div>
@@ -106,7 +120,14 @@ const Excel = ({url}) => {
                             View
                         </button>
                         <button onClick={() => handleFileDelete(file._id)} className="bg-red-500 text-white px-3 py-1 rounded">
-                            Delete
+                            {loading ? (
+                                <div className="flex justify-center items-center">
+                                    <div className="w-6 h-6 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+                                </div>
+                                ):(
+                                    'Delete'
+                                )
+                            }
                         </button>
                     </div>
                 </li>
