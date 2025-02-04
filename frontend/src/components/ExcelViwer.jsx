@@ -32,6 +32,8 @@ const ExcelViewer = ({ url }) => {
     fetchExcels();
   }, []);
 
+  
+
   // Open the modal and parse the latest Excel file
   const openModal = async () => {
     if (latestExcel) {
@@ -67,14 +69,14 @@ const ExcelViewer = ({ url }) => {
             📊
           </div>
           <div>
-            <h2 className="text-lg font-bold text-[#424343]">View Latest Excel</h2>
-            <p className="text-gray-600 whitespace-pre-line">Open the most recently uploaded Excel</p>
+            <h2 className="text-lg font-bold text-[#424343]">{latestExcel ? latestExcel.name.replace(/\.(xlsx|xls)$/i, ''): 'No Excel File'}</h2>
+            <p className="text-gray-600 whitespace-pre-line">Tap To Open The Excel</p>
           </div>
         </div>
       </div>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="View Excel" className="fixed inset-0 bg-white p-4 w-11/12 md:w-3/4 mx-auto my-auto rounded-lg shadow-lg mt-20 overflow-hidden" overlayClassName="fixed inset-0 bg-black bg-opacity-50">
         <div className="flex justify-between items-center border-b pb-2 mb-4">
-          <h2 className="text-lg font-bold">Excel Viewer</h2>
+          <h2 className="text-lg font-bold">{latestExcel ? latestExcel.name.replace(/\.(xlsx|xls)$/i, ''): 'No Excel File'}</h2>
           <button onClick={closeModal} className="text-xl font-bold text-gray-700 hover:text-black">
             ✕
           </button>
