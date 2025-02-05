@@ -30,7 +30,7 @@ const Faq = ({url}) => {
   return (
     <>
         <div className=" mx-auto mt-10 p-4">
-            <h2 className="text-2xl font-bold text-center mb-6">Investor Insights</h2>
+            <h2 className="text-4xl font-bold text-center mb-6">INVESTOR INSIGHTS</h2>
             <div className="space-y-4">
                 {listFaq.map((faq, index) => (
                     <div key={index} className="border-b border-gray-300 pb-3">
